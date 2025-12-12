@@ -6,9 +6,12 @@ import NavItem from "./NavItem";
 
 function Header() {
   const headerRef = useRef(null);
+  const navRef = useRef(null);
   const [isTop, setIsTop] = useState(true);
   const [activeNav, setActiveNav] = useState(null);
+  const [showSearch, setShowSearch] = useState(false);
 
+  // Handle scroll header
   useEffect(() => {
     const headerHeight = headerRef.current.offsetHeight;
 
@@ -20,41 +23,104 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle click outside nav
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setActiveNav(null);
+      }
+    };
+    window.addEventListener("mousedown", handleClickOutside);
+    return () => window.removeEventListener("mousedown", handleClickOutside);
+  }, [navRef]);
+
+  // Handle resize (responsive)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1280) {
+        setShowSearch(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
   return (
     <>
       <header className="fixed top-0 left-0 font-poppins w-full">
         <nav
           ref={headerRef}
-          className={
-            "h-[70px] flex justify-between items-center w-auto px-5 " +
-            (isTop ? "bg-transparent" : "bg-[#0f111a]")
-          }
+          className={`h-[70px] flex justify-between items-center w-auto px-5 ${isTop ? "bg-transparent" : "bg-[#0f111a]"}`}
         >
-          {/* === Logo === */}
-          <div className="hover:cursor-pointer">
-            <a href="#">
+          <div className={`flex items-center ${showSearch ? "max-xl:hidden!" : ""}`}>
+            {/* BarsMenuIcon when <= 1280px */}
+            <i className="fa-solid fa-bars text-white text-2xl xl:hidden!"></i>
+
+            {/* === Logo === */}
+            <a className="cursor-pointer max-xl:ml-4" href="#">
               <div className="flex items-center">
                 <img className="h-13 bg-[#0f111a]" src="movie.svg" alt="logo" />
-                <h3 className="font-semibold text-white text-2xl">RoPhim</h3>
-                <span className="font-mono text-gray-400">Fake</span>
+                <h3 className="font-semibold text-white text-[18px]">RoPhim</h3>
+                <span className="font-mono text-gray-400 text-[12px]">Fake</span>
               </div>
             </a>
           </div>
 
-          {/* === Search - Nav === */}
-          {/* Search */}
-          <div className="flex items-center grow mx-7 border-r border-gray-500">
-            <search className="flex bg-[#22242c] px-4 py-3 rounded border focus-within:border-white max-w-[340px]">
+          {/* SearchIcon when <= 1280px */}
+          {!showSearch && (
+            <i
+              className="fa-solid fa-magnifying-glass text-white xl:hidden! cursor-pointer"
+              onClick={() => setShowSearch(true)}
+            ></i>
+          )}
+
+          {/* === Search === */}
+          <div className="max-xl:hidden flex grow ml-1.5">
+            <search className="flex items-center bg-[#22242c] px-4 py-3 rounded border focus-within:border-white max-w-[440px] w-full">
               <i className="fa-solid fa-magnifying-glass text-white"></i>
               <input
-                className="text-white text-[13px] outline-0 ml-4 pr-3 w-80 placeholder:text-white"
+                className="text-white text-[13px] outline-0 ml-4 w-full placeholder:text-white"
                 type="text"
                 placeholder="Tìm kiếm phim, diễn viên"
               />
             </search>
+          </div>
 
-            {/* Nav */}
-            <div className="ml-8 flex items-center gap-8 text-white text-[13px]">
+          {/* Search bar <= 1280px */}
+          {showSearch && (
+            <div
+              ref={headerRef}
+              className={`fixed top-0 left-0 w-full ${isTop ? "bg-transparent" : "bg-[#0f111a]"}`}
+            >
+              <div className="flex items-center justify-between m-3 h-12">
+                <search
+                  ref={headerRef}
+                  className={`flex items-center rounded border focus-within:border-white w-full py-1.5 ${isTop ? "bg-[#22242c]/30" : "bg-[#22242c]"}`}
+                >
+                  <div className="px-3">
+                    <i className="fa-solid fa-magnifying-glass text-white"></i>
+                  </div>
+                  <input
+                    className="text-white text-[13px] outline-0 w-full placeholder:text-white h-[30px] pr-8"
+                    type="text"
+                    placeholder="Tìm kiếm phim, diễn viên"
+                  />
+                </search>
+                <div className="pl-2.5">
+                  <i className="fa-solid fa-xmark text-red-400 text-[20px] cursor-pointer" onClick={() => setShowSearch(false)}></i>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* === Nav === */}
+          <div
+            ref={navRef}
+            className="max-xl:hidden flex justify-between grow ml-8"
+          >
+            <div className="flex items-center gap-8 text-white text-[13px]">
               <NavItem label={"Phim Lẻ"} href={"/phimle"} activeNav={activeNav} setActiveNav={setActiveNav} />
               <NavItem label={"Phim Bộ"} href={"/phimbo"} activeNav={activeNav} setActiveNav={setActiveNav} />
               <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={genres} col={4} />
@@ -63,11 +129,8 @@ function Header() {
               <NavItem label={"Thêm"} activeNav={activeNav} setActiveNav={setActiveNav} data={others} col={1} />
               <NavItem label={"Rổ Bóng"} href={"/robong"} activeNav={activeNav} setActiveNav={setActiveNav} />
             </div>
-          </div>
 
-          {/* === Member Button ===*/}
-          <div>
-            <button className="bg-white flex items-center rounded-3xl px-7 py-2.5 w-auto text-[13px] font-medium opacity-90 hover:cursor-pointer hover:opacity-100">
+            <button className="bg-white flex items-center rounded-3xl px-3 py-2.5 w-auto text-[13px] font-medium opacity-90 cursor-pointer hover:opacity-100">
               <i className="fa-solid fa-user"></i>
               <h4 className="ml-1.5">Thành viên</h4>
             </button>
