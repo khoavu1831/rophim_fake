@@ -7,6 +7,7 @@ import NavItem from "./NavItem";
 function Header() {
   const headerRef = useRef(null);
   const navRef = useRef(null);
+  const inputRef = useRef(null);
   const [isTop, setIsTop] = useState(true);
   const [activeNav, setActiveNav] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
@@ -55,10 +56,10 @@ function Header() {
           className={`h-[70px] flex justify-between items-center w-auto px-5 ${isTop ? "bg-transparent" : "bg-[#0f111a]"}`}
         >
           <div className={`flex items-center ${showSearch ? "max-xl:hidden!" : ""}`}>
-            {/* BarsMenuIcon when <= 1280px */}
+            {/* BarsMenuIcon <= 1280px */}
             <i className="fa-solid fa-bars text-white text-2xl xl:hidden!"></i>
 
-            {/* === Logo === */}
+            {/* Logo */}
             <a className="cursor-pointer max-xl:ml-4" href="#">
               <div className="flex items-center">
                 <img className="h-13 bg-[#0f111a]" src="movie.svg" alt="logo" />
@@ -68,7 +69,7 @@ function Header() {
             </a>
           </div>
 
-          {/* SearchIcon when <= 1280px */}
+          {/* SearchIcon <= 1280px */}
           {!showSearch && (
             <i
               className="fa-solid fa-magnifying-glass text-white xl:hidden! cursor-pointer"
@@ -76,7 +77,7 @@ function Header() {
             ></i>
           )}
 
-          {/* === Search === */}
+          {/* SearchBar > 1280px */}
           <div className="max-xl:hidden flex grow ml-1.5">
             <search className="flex items-center bg-[#22242c] px-4 py-3 rounded border focus-within:border-white max-w-[440px] w-full">
               <i className="fa-solid fa-magnifying-glass text-white"></i>
@@ -88,34 +89,34 @@ function Header() {
             </search>
           </div>
 
-          {/* Search bar <= 1280px */}
+          {/* SearchBar <= 1280px */}
           {showSearch && (
             <div
               ref={headerRef}
-              className={`fixed top-0 left-0 w-full ${isTop ? "bg-transparent" : "bg-[#0f111a]"}`}
+              className={`fixed top-0 left-0 w-full px-2 h-[70px] ${isTop ? "bg-transparent" : "bg-[#0f111a]"}`}
             >
-              <div className="flex items-center justify-between m-3 h-12">
+              <div className="flex items-center justify-between m-3">
                 <search
                   ref={headerRef}
-                  className={`flex items-center rounded border focus-within:border-white w-full py-1.5 ${isTop ? "bg-[#22242c]/30" : "bg-[#22242c]"}`}
+                  className={`flex items-center rounded-md border focus-within:border-white w-full py-1.5 ${isTop ? "bg-[#22242c]/30" : "bg-[#22242c]"}`}
                 >
                   <div className="px-3">
                     <i className="fa-solid fa-magnifying-glass text-white"></i>
                   </div>
                   <input
-                    className="text-white text-[13px] outline-0 w-full placeholder:text-white h-[30px] pr-8"
+                    className="focus-within: text-white text-[13px] outline-0 w-full placeholder:text-white h-[30px] pr-8"
                     type="text"
                     placeholder="Tìm kiếm phim, diễn viên"
                   />
                 </search>
-                <div className="pl-2.5">
-                  <i className="fa-solid fa-xmark text-red-400 text-[20px] cursor-pointer" onClick={() => setShowSearch(false)}></i>
+                <div className="pl-3 flex items-center">
+                  <i className="fa-solid fa-xmark text-red-400 text-[20px] cursor-pointer pl-1" onClick={() => setShowSearch(false)}></i>
                 </div>
               </div>
             </div>
           )}
 
-          {/* === Nav === */}
+          {/* MenuItems */}
           <div
             ref={navRef}
             className="max-xl:hidden flex justify-between grow ml-8"
