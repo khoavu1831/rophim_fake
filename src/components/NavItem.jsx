@@ -1,21 +1,23 @@
 import SubNav from "./SubNav"
 
-function NavItem({ label, href, data, col, activeNav, setActiveNav }) {
+function NavItem({ label, href, data, col, activeNav, setActiveNav, variant = "desktop" }) {
     const isOpen = activeNav === label;
 
     const toggle = (e) => {
         if (data) setActiveNav(isOpen ? null : label);
-
     };
 
     return (
-        <div className="relative cursor-pointer">
-            <a className="hover:text-[#5f9beb]" href={href} onClick={toggle}>
+        <div className={`relative cursor-pointer ${variant === "mobile" ? "p-2 text-[13px]" : ""}`}>
+            <a
+                className={`hover:text-[#5f9beb] ${variant === "mobile" ? "text-white" : " "}`}
+                href={href}
+                onClick={toggle}>
                 {label}
                 {data && <i className="fa-solid fa-caret-down ml-1"></i>}
             </a>
 
-            {data && <SubNav data={data} isOpen={isOpen} col={col} />}
+            {data && <SubNav data={data} isOpen={isOpen} col={col}/>}
         </div>
     )
 }

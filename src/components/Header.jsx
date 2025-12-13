@@ -7,10 +7,10 @@ import NavItem from "./NavItem";
 function Header() {
   const headerRef = useRef(null);
   const navRef = useRef(null);
-  const inputRef = useRef(null);
   const [isTop, setIsTop] = useState(true);
   const [activeNav, setActiveNav] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
+  const [showMenuItems, setShowMenuItems] = useState(false);
 
   // Handle scroll header
   useEffect(() => {
@@ -40,6 +40,7 @@ function Header() {
     const handleResize = () => {
       if (window.innerWidth > 1280) {
         setShowSearch(false);
+        setShowMenuItems(false);
       }
     };
 
@@ -50,19 +51,23 @@ function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 font-poppins w-full">
+      <header className="max-xl:relative max-xl:bg-[#0f111a] fixed top-0 left-0 font-poppins w-full">
         <nav
           ref={headerRef}
-          className={`h-[70px] flex justify-between items-center w-auto px-5 ${isTop ? "bg-transparent" : "bg-[#0f111a]"}`}
+          className={`h-[70px] flex justify-between items-center w-auto px-5 ${isTop ? "bg-transparent" : "bg-[#0f111a]"} xl:relative`}
         >
           <div className={`flex items-center ${showSearch ? "max-xl:hidden!" : ""}`}>
             {/* BarsMenuIcon <= 1280px */}
-            <i className="fa-solid fa-bars text-white text-2xl xl:hidden!"></i>
+            <i
+              className={`fa-solid cursor-pointer ${showMenuItems ? "text-red-400! fa-xmark" : "fa-bars"} text-white text-2xl xl:hidden!`}
+              onClick={() => setShowMenuItems(!showMenuItems)}
+            ></i>
+
 
             {/* Logo */}
             <a className="cursor-pointer max-xl:ml-4" href="#">
               <div className="flex items-center">
-                <img className="h-13 bg-[#0f111a]" src="movie.svg" alt="logo" />
+                <img className="h-13" src="movie.svg" alt="logo" />
                 <h3 className="font-semibold text-white text-[18px]">RoPhim</h3>
                 <span className="font-mono text-gray-400 text-[12px]">Fake</span>
               </div>
@@ -122,13 +127,13 @@ function Header() {
             className="max-xl:hidden flex justify-between grow ml-8"
           >
             <div className="flex items-center gap-8 text-white text-[13px]">
-              <NavItem label={"Phim Lẻ"} href={"/phimle"} activeNav={activeNav} setActiveNav={setActiveNav} />
-              <NavItem label={"Phim Bộ"} href={"/phimbo"} activeNav={activeNav} setActiveNav={setActiveNav} />
-              <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={genres} col={4} />
-              <NavItem label={"Quốc gia"} activeNav={activeNav} setActiveNav={setActiveNav} data={countries} col={1} />
-              <NavItem label={"Xem Chung"} href={"/xemchung"} activeNav={activeNav} setActiveNav={setActiveNav} />
-              <NavItem label={"Thêm"} activeNav={activeNav} setActiveNav={setActiveNav} data={others} col={1} />
-              <NavItem label={"Rổ Bóng"} href={"/robong"} activeNav={activeNav} setActiveNav={setActiveNav} />
+              <NavItem label={"Phim Lẻ"} href={"/phimle"} activeNav={activeNav} setActiveNav={setActiveNav} variant="desktop" />
+              <NavItem label={"Phim Bộ"} href={"/phimbo"} activeNav={activeNav} setActiveNav={setActiveNav} variant="desktop" />
+              <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={genres} col={4} variant="desktop" />
+              <NavItem label={"Quốc gia"} activeNav={activeNav} setActiveNav={setActiveNav} data={countries} col={1} variant="desktop" />
+              <NavItem label={"Xem Chung"} href={"/xemchung"} activeNav={activeNav} setActiveNav={setActiveNav} variant="desktop" />
+              <NavItem label={"Thêm"} activeNav={activeNav} setActiveNav={setActiveNav} data={others} col={1} variant="desktop" />
+              <NavItem label={"Rổ Bóng"} href={"/robong"} activeNav={activeNav} setActiveNav={setActiveNav} variant="desktop" />
             </div>
 
             <button className="bg-white flex items-center rounded-3xl px-3 py-2.5 w-auto text-[13px] font-medium opacity-90 cursor-pointer hover:opacity-100">
@@ -137,6 +142,28 @@ function Header() {
             </button>
           </div>
         </nav>
+
+        {/* MenuItems <= 1280px */}
+        {showMenuItems && (
+          <div className="xl:hidden absolute top-full left-0 mt-1 w-full md:max-w-[320px] px-1.5">
+            <div className="bg-[#2b3561] rounded-[14px] flex flex-col py p-4">
+              <button className="bg-white flex justify-center items-center rounded-3xl px-3 text-[13px] font-medium opacity-90 cursor-pointer hover:opacity-100 w-full h-[38px] ">
+                <i className="fa-solid fa-user"></i>
+                <h4 className="ml-1.5">Thành viên</h4>
+              </button>
+
+              <div className="grid grid-cols-2 mt-4">
+                <NavItem label={"Phim Lẻ"} href={"/phimle"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
+                <NavItem label={"Phim Bộ"} href={"/phimbo"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
+                <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={genres} col={2} variant="mobile" />
+                <NavItem label={"Quốc gia"} activeNav={activeNav} setActiveNav={setActiveNav} data={countries} col={1} variant="mobile" />
+                <NavItem label={"Xem Chung"} href={"/xemchung"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
+                <NavItem label={"Thêm"} activeNav={activeNav} setActiveNav={setActiveNav} data={others} col={1} variant="mobile" />
+                <NavItem label={"Rổ Bóng"} href={"/robong"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
+              </div>
+            </div>
+          </div>
+        )}
       </header>
     </>
   )

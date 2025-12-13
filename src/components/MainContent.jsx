@@ -5,6 +5,9 @@ function MainContent() {
         <>
             <div className="bg-[#4f4f4f] h-dvh">
                 <Banner />
+                <Banner />
+                <Banner />
+                <Banner />
             </div>
         </>
     )
