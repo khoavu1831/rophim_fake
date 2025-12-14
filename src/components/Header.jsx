@@ -51,7 +51,7 @@ function Header() {
 
   return (
     <>
-      <header className="max-xl:relative max-xl:bg-[#0f111a] fixed top-0 left-0 font-poppins w-full">
+      <header className="max-lg:relative max-lg:bg-[#0f111a] fixed top-0 left-0 font-poppins w-full">
         <nav
           ref={headerRef}
           className={`h-[70px] flex justify-between items-center w-auto px-5 ${isTop ? "bg-transparent" : "bg-[#0f111a]"} xl:relative`}
@@ -155,7 +155,7 @@ function Header() {
               <div className="grid grid-cols-2 mt-4">
                 <NavItem label={"Phim Lẻ"} href={"/phimle"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
                 <NavItem label={"Phim Bộ"} href={"/phimbo"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
-                <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={genres} col={2} variant="mobile" />
+                <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={genres} col={6} variant="mobile" />
                 <NavItem label={"Quốc gia"} activeNav={activeNav} setActiveNav={setActiveNav} data={countries} col={1} variant="mobile" />
                 <NavItem label={"Xem Chung"} href={"/xemchung"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
                 <NavItem label={"Thêm"} activeNav={activeNav} setActiveNav={setActiveNav} data={others} col={1} variant="mobile" />
