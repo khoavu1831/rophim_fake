@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react"
-import { genres } from "../utils/seed";
-import { countries } from "../utils/seed";
-import { others } from "../utils/seed";
+import { labels } from "../utils/seed";
 import NavItem from "./NavItem";
 
 function Header() {
   const headerRef = useRef(null);
-  const navRef = useRef(null);
+  const desktopNavRef = useRef(null);
+  const mobileNavRef = useRef(null);
   const [isTop, setIsTop] = useState(true);
   const [activeNav, setActiveNav] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
@@ -27,13 +26,16 @@ function Header() {
   // Handle click outside nav
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (navRef.current && !navRef.current.contains(e.target)) {
-        setActiveNav(null);
-      }
+      if (desktopNavRef.current && desktopNavRef.current.contains(e.target)) return;
+      if (mobileNavRef.current && mobileNavRef.current.contains(e.target)) return;
+
+      setActiveNav(null);
     };
+
     window.addEventListener("mousedown", handleClickOutside);
     return () => window.removeEventListener("mousedown", handleClickOutside);
-  }, [navRef]);
+  }, []);
+
 
   // Handle resize (responsive)
   useEffect(() => {
@@ -123,16 +125,16 @@ function Header() {
 
           {/* MenuItems */}
           <div
-            ref={navRef}
+            ref={desktopNavRef}
             className="max-xl:hidden flex justify-between grow ml-8"
           >
             <div className="flex items-center gap-8 text-white text-[13px]">
               <NavItem label={"Phim Lẻ"} href={"/phimle"} activeNav={activeNav} setActiveNav={setActiveNav} variant="desktop" />
               <NavItem label={"Phim Bộ"} href={"/phimbo"} activeNav={activeNav} setActiveNav={setActiveNav} variant="desktop" />
-              <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={genres} col={4} variant="desktop" />
-              <NavItem label={"Quốc gia"} activeNav={activeNav} setActiveNav={setActiveNav} data={countries} col={1} variant="desktop" />
+              <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={labels.genres} col={4} variant="desktop" />
+              <NavItem label={"Quốc gia"} activeNav={activeNav} setActiveNav={setActiveNav} data={labels.countries} col={1} variant="desktop" />
               <NavItem label={"Xem Chung"} href={"/xemchung"} activeNav={activeNav} setActiveNav={setActiveNav} variant="desktop" />
-              <NavItem label={"Thêm"} activeNav={activeNav} setActiveNav={setActiveNav} data={others} col={1} variant="desktop" />
+              <NavItem label={"Thêm"} activeNav={activeNav} setActiveNav={setActiveNav} data={labels.others} col={1} variant="desktop" />
               <NavItem label={"Rổ Bóng"} href={"/robong"} activeNav={activeNav} setActiveNav={setActiveNav} variant="desktop" />
             </div>
 
@@ -145,7 +147,10 @@ function Header() {
 
         {/* MenuItems <= 1280px */}
         {showMenuItems && (
-          <div className="xl:hidden absolute top-full left-0 mt-1 w-full md:max-w-[320px] px-1.5">
+          <div
+            ref={mobileNavRef}
+            className="xl:hidden absolute top-full left-0 mt-1 w-full md:max-w-[320px] px-1.5 z-50"
+          >
             <div className="bg-[#2b3561] rounded-[14px] flex flex-col py p-4">
               <button className="bg-white flex justify-center items-center rounded-3xl px-3 text-[13px] font-medium opacity-90 cursor-pointer hover:opacity-100 w-full h-[38px] ">
                 <i className="fa-solid fa-user"></i>
@@ -155,10 +160,10 @@ function Header() {
               <div className="grid grid-cols-2 mt-4">
                 <NavItem label={"Phim Lẻ"} href={"/phimle"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
                 <NavItem label={"Phim Bộ"} href={"/phimbo"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
-                <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={genres} responsive col={6} variant="mobile" />
-                <NavItem label={"Quốc gia"} activeNav={activeNav} setActiveNav={setActiveNav} data={countries} col={1} variant="mobile" />
+                <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={labels.genres} responsive col={6} variant="mobile" />
+                <NavItem label={"Quốc gia"} activeNav={activeNav} setActiveNav={setActiveNav} data={labels.countries} col={1} variant="mobile" />
                 <NavItem label={"Xem Chung"} href={"/xemchung"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
-                <NavItem label={"Thêm"} activeNav={activeNav} setActiveNav={setActiveNav} data={others} col={1} variant="mobile" />
+                <NavItem label={"Thêm"} activeNav={activeNav} setActiveNav={setActiveNav} data={labels.others} col={1} variant="mobile" />
                 <NavItem label={"Rổ Bóng"} href={"/robong"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
               </div>
             </div>

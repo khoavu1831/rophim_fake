@@ -1,13 +1,10 @@
-import Banner from "./Banner"
+import Slider from "./Slider"
 
 function MainContent() {
     return (
         <>
-            <div className="bg-[#4f4f4f] h-dvh">
-                <Banner />
-                <Banner />
-                <Banner />
-                <Banner />
+            <div className="bg-black h-dvh">
+                <Slider />
             </div>
         </>
     )
