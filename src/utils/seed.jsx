@@ -106,8 +106,8 @@ export const movies = [
     id: 5,
     title: "Phi Vụ Thế Kỷ: Thoắt Ẩn Thoắt Hiện",
     subTitle: "Now You See Me 3: Now You Don't",
-    poster: "https://s.yimg.com/ny/api/res/1.2/bBJwX8AuYnT2y2kvzjOJXw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD02OTk7Y2Y9d2VicA--/https://media.zenfs.com/en/comingsoon_net_477/8d447192f5997f6bbc8125936f54a648",
-    avatar: "https://s.yimg.com/ny/api/res/1.2/bBJwX8AuYnT2y2kvzjOJXw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD02OTk7Y2Y9d2VicA--/https://media.zenfs.com/en/comingsoon_net_477/8d447192f5997f6bbc8125936f54a648",
+    poster: "https://www.stylerave.com/wp-content/uploads/2025/06/Now-You-See-Me-3.webp",
+    avatar: "https://www.stylerave.com/wp-content/uploads/2025/06/Now-You-See-Me-3.webp",
     description: "Những ảo thuật gia trở lại với phi vụ táo bạo nhất.",
     info: {
       imdb: 7.8,

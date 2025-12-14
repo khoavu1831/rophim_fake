@@ -13,8 +13,6 @@ function MainContent() {
                     <h1>CONTENT HERE</h1>
                     <h1 className="text-cyan-600">BUILDING</h1>
                 </div>
-
-
             </div>
         </>
     )
