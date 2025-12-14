@@ -155,7 +155,7 @@ function Header() {
               <div className="grid grid-cols-2 mt-4">
                 <NavItem label={"Phim Lẻ"} href={"/phimle"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
                 <NavItem label={"Phim Bộ"} href={"/phimbo"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
-                <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={genres} col={6} variant="mobile" />
+                <NavItem label={"Thể loại"} activeNav={activeNav} setActiveNav={setActiveNav} data={genres} responsive col={6} variant="mobile" />
                 <NavItem label={"Quốc gia"} activeNav={activeNav} setActiveNav={setActiveNav} data={countries} col={1} variant="mobile" />
                 <NavItem label={"Xem Chung"} href={"/xemchung"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
                 <NavItem label={"Thêm"} activeNav={activeNav} setActiveNav={setActiveNav} data={others} col={1} variant="mobile" />

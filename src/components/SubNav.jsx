@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react";
 
-function SubNav({ data, isOpen, col }) {
+function SubNav({ data, isOpen, col, responsive }) {
   const [gridCol, setGridCol] = useState(col);
-  const [cellWidth, setCellWidth] = useState(150);
+  const [cellWidth, setCellWidth] = useState(130);
 
-  // Handle resize col MenuItems
+  // Handle resize col Genres in MenuItems
   useEffect(() => {
+    if (!responsive) return;
     const handleResize = () => {
       const w = window.innerWidth;
-      if (w < 350) return (setGridCol(3), setCellWidth(90));
-      if (w < 1024) return (setGridCol(3), setCellWidth(100));
+      if (w <= 375) return (setGridCol(3), setCellWidth(90));
+      if (w < 1024) return (setGridCol(3), setCellWidth(120));
+
       setGridCol(col);
-      setCellWidth(150);
+      setCellWidth(130);
     }
 
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [col]);
+  }, [col, responsive]);
 
   if (!isOpen) return null;
 

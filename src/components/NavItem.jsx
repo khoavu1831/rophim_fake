@@ -1,6 +1,6 @@
 import SubNav from "./SubNav"
 
-function NavItem({ label, href, data, col, activeNav, setActiveNav, variant = "desktop" }) {
+function NavItem({ label, href, data, col, activeNav, setActiveNav, variant = "desktop", responsive }) {
     const isOpen = activeNav === label;
 
     const toggle = (e) => {
@@ -17,7 +17,7 @@ function NavItem({ label, href, data, col, activeNav, setActiveNav, variant = "d
                 {data && <i className="fa-solid fa-caret-down ml-1"></i>}
             </a>
 
-            {data && <SubNav data={data} isOpen={isOpen} col={col}/>}
+            {data && <SubNav data={data} isOpen={isOpen} col={col} responsive={responsive}/>}
         </div>
     )
 }
