@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { labels } from "../utils/seed";
+import { labels } from "../../utils/seed";
 import NavItem from "./NavItem";
 
 function Header() {
@@ -53,7 +53,7 @@ function Header() {
 
   return (
     <>
-      <header className="max-lg:relative max-lg:bg-[#0f111a] fixed top-0 left-0 font-poppins w-full">
+      <header className="max-sm:relative max-sm:bg-[#0f111a] fixed top-0 left-0 font-poppins w-full z-50">
         <nav
           ref={headerRef}
           className={`h-[70px] flex justify-between items-center w-auto px-5 ${isTop ? "bg-transparent" : "bg-[#0f111a]"} xl:relative`}
