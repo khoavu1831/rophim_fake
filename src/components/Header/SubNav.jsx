@@ -9,7 +9,7 @@ function SubNav({ data, isOpen, col, responsive }) {
     if (!responsive) return;
     const handleResize = () => {
       const w = window.innerWidth;
-      if (w <= 375) return (setGridCol(3), setCellWidth(80));
+      if (w <= 375) return (setGridCol(2), setCellWidth(100));
       if (w < 1024) return (setGridCol(3), setCellWidth(120));
 
       setGridCol(col);

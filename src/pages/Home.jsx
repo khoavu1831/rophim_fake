@@ -5,7 +5,7 @@ import Slider from "../components/Slider/Slider";
 
 function Home() {
     return (
-        <div className="h-dvh">
+        <div className="h-full">
             <Header />
             <Slider />
             <MainContent />

@@ -11,7 +11,7 @@ function TopSlider({ movies, active }) {
                 src={m.poster}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute pointer-events-none inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent"></div>
+              <div className="absolute pointer-events-none inset-0 bg-linear-to-t from-black via-black/30 to-transparent"></div>
 
               {/* Content */}
               <div className="absolute bottom-0 flex flex-col max-sm:items-center sm:pl-8 sm:pb-8 w-full">
@@ -29,12 +29,12 @@ function TopSlider({ movies, active }) {
                 {/* Tags */}
                 <div className="flex text-[10px] gap-2 text-white py-2">
                   <span className="border rounded-md py-px px-1">
-                    <span className="text-[#5f9beb]">IMDb</span> {m.info.imdb}
+                    <span className="text-[#5f9beb]">IMDb</span> {m.info.imdb ?? "--"}
                   </span>
-                  <span className="border rounded-md py-px px-1 bg-[#5f9beb] text-black font-semibold">{m.info.resolution}</span>
-                  <span className="border rounded-md py-px px-1 bg-white text-black font-semibold">{m.info.ageLimit}</span>
-                  <span className="border rounded-md py-px px-1 bg-[#ffffff10]">{m.info.year}</span>
-                  <span className="border rounded-md py-px px-1 bg-[#ffffff10]">{m.info.duration}</span>
+                  <span className="border rounded-md py-px px-1 bg-[#5f9beb] text-black font-semibold">{m.info.resolution ?? "--"}</span>
+                  <span className="border rounded-md py-px px-1 bg-white text-black font-semibold">{m.info.ageLimit ?? "--"}</span>
+                  <span className="border rounded-md py-px px-1 bg-[#ffffff10]">{m.info.year ?? "--"}</span>
+                  <span className="border rounded-md py-px px-1 bg-[#ffffff10]">{m.info.duration ?? "--"}</span>
                 </div>
 
                 {/* Genres tags */}

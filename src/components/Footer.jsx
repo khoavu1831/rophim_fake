@@ -23,22 +23,22 @@ function Footer() {
               {/* Icons */}
               <div className="flex gap-2 text-white max-xl:mt-4 xl:pl-12 xl:border-l border-gray-400">
                 <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
-                  <i class="fa-brands fa-telegram text-xl"></i>
+                  <i className="fa-brands fa-telegram text-xl"></i>
                 </a>
                 <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
-                  <i class="fa-brands fa-discord"></i>
+                  <i className="fa-brands fa-discord"></i>
                 </a>
                 <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
-                  <i class="fa-brands fa-x-twitter"></i>
+                  <i className="fa-brands fa-x-twitter"></i>
                 </a>
                 <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
-                  <i class="fa-brands fa-facebook"></i>
+                  <i className="fa-brands fa-facebook"></i>
                 </a>
                 <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
-                  <i class="fa-brands fa-tiktok"></i>
+                  <i className="fa-brands fa-tiktok"></i>
                 </a>
                 <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
-                  <i class="fa-brands fa-youtube"></i>
+                  <i className="fa-brands fa-youtube"></i>
                 </a>
               </div>
             </div>
@@ -61,7 +61,7 @@ function Footer() {
               <p>RoPhim – Phim hay cả rổ - Trang xem phim online chất lượng cao miễn phí Vietsub, thuyết minh, lồng tiếng full HD. Kho phim mới khổng lồ, phim chiếu rạp, phim bộ, phim lẻ từ nhiều quốc gia như Việt Nam, Hàn Quốc, Trung Quốc, Thái Lan, Nhật Bản, Âu Mỹ… đa dạng thể loại. Khám phá nền tảng phim trực tuyến hay nhất 2024 chất lượng 4K!</p>
             </div>
             <div className="flex items-center mt-4 text-[#5f9beb]">
-              <i class="fa-regular fa-copyright"></i>
+              <i className="fa-regular fa-copyright"></i>
               <p className="font-semibold">2025 Rophim<span className="text-gray-400 font-light">Fake</span> - kaiwu</p>
             </div>
           </div>
