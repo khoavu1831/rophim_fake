@@ -37,6 +37,10 @@ export const labels = {
   ]
 }
 
+export const titleCollections = [
+  "Phim Điện Ảnh Mới Coóng", "Top 10 bộ phim hôm nay", "Mãn nhãn với phim chiếu rạp", "Phim Thái New: Không Drama Đời Không Nể", "Tôi Sợ Con Người Em Rồi Đó, nhưng Không Bằng Sợ Ma"
+]
+
 export const movies = [
   {
     "id": 1,
@@ -60,8 +64,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/1e3dd3e38c37ea56d75d1f838fa00458.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/c04eb2651bacb46cc0642c503ee7be2e.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/1e3dd3e38c37ea56d75d1f838fa00458.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/c04eb2651bacb46cc0642c503ee7be2e.jpg"
     },
     "subtitle": "30",
     "dub": "0"
@@ -85,8 +89,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/a83fe37697a326facbc44403c75bca09.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/d61d7391b8c25e77b1fec4e8f7dc82ec.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/a83fe37697a326facbc44403c75bca09.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/d61d7391b8c25e77b1fec4e8f7dc82ec.jpg"
     },
     "subtitle": "0",
     "dub": "0"
@@ -110,8 +114,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/b8c1347dcbd8b0626866cacbe26700d0.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/e554ecd1dd1bf8e4c4c4a0aed8114883.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/b8c1347dcbd8b0626866cacbe26700d0.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/e554ecd1dd1bf8e4c4c4a0aed8114883.jpg"
     },
     "subtitle": "16",
     "dub": "0"
@@ -136,8 +140,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/7a350b09337b6fd7372d9be18859e229.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/5afae857d493f298886cff86b0fae07a.webp"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/7a350b09337b6fd7372d9be18859e229.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/5afae857d493f298886cff86b0fae07a.webp"
     },
     "subtitle": "20",
     "dub": "0"
@@ -162,8 +166,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/09ccd5fac344cf0201af4fabd48f4ab1.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/75fac92b4935d26bc90d4dec56dc0f85.jpeg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/09ccd5fac344cf0201af4fabd48f4ab1.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/75fac92b4935d26bc90d4dec56dc0f85.jpeg"
     },
     "subtitle": "20",
     "dub": "0"
@@ -187,8 +191,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/be56f7a0420e1b172d5f31648ee3bbe6.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/b6d8369187549b362c408e5aa7be7734.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/be56f7a0420e1b172d5f31648ee3bbe6.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/b6d8369187549b362c408e5aa7be7734.jpg"
     },
     "subtitle": "0",
     "dub": "0"
@@ -213,8 +217,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/2fecfde6dd3dfba9466a85fd350f9eb2.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/47829af64731cba77e05fed8e3865c39.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/2fecfde6dd3dfba9466a85fd350f9eb2.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/47829af64731cba77e05fed8e3865c39.jpg"
     },
     "subtitle": "0",
     "dub": "0"
@@ -239,8 +243,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/567c678a62a49b1363c370dbb030cbb0.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/fa6a6074511b4b5bbc7ab417eb62e0fd.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/567c678a62a49b1363c370dbb030cbb0.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/fa6a6074511b4b5bbc7ab417eb62e0fd.jpg"
     },
     "subtitle": "0",
     "dub": "0"
@@ -265,8 +269,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/3e1153c45783bd35144e879f5f51c586.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/05935aed0e3520cac4a768c1aaf7815d.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/3e1153c45783bd35144e879f5f51c586.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/05935aed0e3520cac4a768c1aaf7815d.jpg"
     },
     "subtitle": "0",
     "dub": "0"
@@ -291,8 +295,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/e756e8e598f63e70702c49ecc9c30232.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/a9a9df4774b2428e06a19a0336fd3f85.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/e756e8e598f63e70702c49ecc9c30232.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/a9a9df4774b2428e06a19a0336fd3f85.jpg"
     },
     "subtitle": "0",
     "dub": "0"
@@ -317,8 +321,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/15f4d5177f1cea381c8b563994b72b7c.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/c2c7edb03621bb373b9daaa6d46255d6.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/15f4d5177f1cea381c8b563994b72b7c.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/c2c7edb03621bb373b9daaa6d46255d6.jpg"
     },
     "subtitle": "0",
     "dub": "0"
@@ -343,8 +347,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/456dc8a1a05a672ec8afbaa470024a3a.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/06b21e724b351fc087e2a2433b66dc35.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/456dc8a1a05a672ec8afbaa470024a3a.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/06b21e724b351fc087e2a2433b66dc35.jpg"
     },
     "subtitle": "0",
     "dub": "0"
@@ -369,8 +373,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/355ac606bf65a5795d7e6ab55022dc6d.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/62ea152c2446a6c29af7a237bd4b79d2.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/355ac606bf65a5795d7e6ab55022dc6d.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/62ea152c2446a6c29af7a237bd4b79d2.jpg"
     },
     "subtitle": "0",
     "dub": "0"
@@ -395,8 +399,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/cd0979d7a6fdb48d71daaf9384f362cd.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/61ef93826d3de24fb21af3c0c3f98ea7.jpg"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/cd0979d7a6fdb48d71daaf9384f362cd.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/61ef93826d3de24fb21af3c0c3f98ea7.jpg"
     },
     "subtitle": "0",
     "dub": "0"
@@ -421,8 +425,8 @@ export const movies = [
       ]
     },
     "imageUrl": {
-      "vertical": "https://static.nutscdn.com/vimg/400-0/6367c8bac2fcd746c32f60700df2cc41.jpg",
-      "horizontal": "https://static.nutscdn.com/vimg/300-0/cc8b1f1594d803c09209ce87528587eb.webp"
+      "horizontal": "https://static.nutscdn.com/vimg/400-0/6367c8bac2fcd746c32f60700df2cc41.jpg",
+      "vertical": "https://static.nutscdn.com/vimg/300-0/cc8b1f1594d803c09209ce87528587eb.webp"
     },
     "subtitle": "0",
     "dub": "0"

@@ -5,26 +5,33 @@ import { Navigation } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation"
 
-function Collection({ movies, isVertical }) {
+function Collection({ movies, titleCollection, variant }) {
   const MAXCARD = 10;
+  const isVertical = variant === "vertical";
 
   return (
     <>
-      <div className="container-collection p-4">
+      <div className="px-4">
         {/* Thumbnail */}
-        <div className="collection flex items-center justify-between mb-4">
-          {/* Intro */}
-          <div className="intro flex items-center justify-between w-full">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center max-sm:justify-between w-full">
             {/* <div className="content text-[21px] font-bold bg-linear-to-r from-[#b8a1e2] to-[#ffffff] bg-clip-text text-transparent">
               Phim Hàn Quốc mới
             </div> */}
-            <div className="content text-[21px] sm:text-[25px] font-bold text-white">
-              Phim Hàn Quốc mới
+            <div className="text-[22px] sm:text-[25px] font-medium text-white max-w-[86%]">
+              {titleCollection}
             </div>
 
-            <div className="more-icon flex items-center pr-[2%] text-white">
-              <a className="max-sm:hidden text-[14px] font-semibold" href="">Xem toàn bộ</a>
-              <i className="fa-solid fa-angle-right mr-3"></i>
+            {/* More icon */}
+            <div className="flex items-center text-white sm:pl-5">
+              {/* <h2 className="max-sm:hidden text-[14px] font-semibold">Xem toàn bộ</h2> */}
+              <a
+                href=""
+                className="w-8 h-8 rounded-full border border-[#646161] flex justify-center items-center"
+              >
+                <i className="fa-solid fa-angle-right"></i>
+              </a>
+
             </div>
           </div>
         </div>
@@ -32,15 +39,17 @@ function Collection({ movies, isVertical }) {
         <Swiper
           modules={[Navigation]}
           spaceBetween={10}
-          slidesPerView={2}
+          slidesPerView={isVertical ? 3 : 2}
           // navigation
           breakpoints={{
-            768: { slidesPerView: 3 },
+            768: { slidesPerView: isVertical ? 4 : 2 },
+            1024: { slidesPerView: isVertical ? 5 : 3 },
+            1440: { slidesPerView: isVertical ? 7 : 3 }
           }}
         >
           {movies.slice(0, MAXCARD).map((m) => (
             <SwiperSlide key={m.id}>
-              <Card movie={m} isVertical={isVertical} />
+              <Card movie={m} variant={variant} />
             </SwiperSlide>
           ))}
         </Swiper>
