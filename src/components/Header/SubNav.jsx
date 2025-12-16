@@ -9,8 +9,8 @@ function SubNav({ data, isOpen, col, responsive }) {
     if (!responsive) return;
     const handleResize = () => {
       const w = window.innerWidth;
-      if (w <= 375) return (setGridCol(2), setCellWidth(100));
-      if (w < 1024) return (setGridCol(3), setCellWidth(120));
+      if (w <= 425) return (setGridCol(3), setCellWidth(95));
+      if (w < 1024) return (setGridCol(5), setCellWidth(120));
 
       setGridCol(col);
       setCellWidth(130);
@@ -24,7 +24,7 @@ function SubNav({ data, isOpen, col, responsive }) {
   if (!isOpen) return null;
 
   return (
-    <div className="absolute top-full left-0 xl:mt-6 bg-[#0f111a]/80 rounded font-light shadow-lg z-50">
+    <div className="absolute top-full left-0 max-sm:-left-4 xl:mt-6 bg-[#0f111a]/90 rounded font-light shadow-lg z-50">
       <div
         className="grid text-[13px] px-2 py-4 gap-1"
         style={{
