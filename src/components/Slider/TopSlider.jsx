@@ -1,6 +1,6 @@
 function TopSlider({ movies, active }) {
   return (
-    <div className="relative w-full h-60 sm:h-[420px] lg:h-[600px] xl:h-[660px] overflow-hidden">
+    <div className="relative w-full h-60 sm:h-[420px] lg:h-[600px] xl:h-[760px] 2xl:h-[860px] overflow-hidden">
       <div className="flex h-full transition-transform duration-700">
         {
           movies.map((m, i) => (
@@ -9,9 +9,27 @@ function TopSlider({ movies, active }) {
               className={`absolute inset-0 transition-opacity duration-700 ${i === active ? "opacity-100" : "opacity-0 z-0"}`}>
               <img
                 src={m.poster}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover saturate-110 contrast-105"
               />
-              <div className="absolute pointer-events-none inset-0 bg-linear-to-t from-black via-black/30 to-transparent"></div>
+
+              {/* Effect shadow for image */}
+              <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-[#1b1d29] via-[#1b1d29]/1 to-transparent"></div>
+              <div className="absolute inset-0 pointer-events-none bg-linear-to-r from-[#1b1d29]/95 via-[#1b1d29]/1 to-transparent"></div>
+              <div className="absolute inset-0 pointer-events-none bg-linear-to-l from-[#1b1d29]/95 via-[#1b1d29]/1 to-transparent"></div>
+
+              {/* Grid noise */}
+              <div
+                className="absolute inset-0 pointer-events-none opacity-[0.56]"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)
+                  `,
+                  backgroundSize: "3px 3px",
+                  mixBlendMode: "overlay"
+                }}
+              ></div>
+
+
 
               {/* Content */}
               <div className="absolute bottom-0 flex flex-col max-sm:items-center sm:pl-8 sm:pb-8 w-full">
@@ -29,7 +47,7 @@ function TopSlider({ movies, active }) {
                 {/* Tags */}
                 <div className="flex text-[10px] gap-2.5 text-white py-2 md:text-[12px] items-center">
                   <div className="border rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 font-bold">
-                    <span className="text-[#5f9beb] text-[11px]">IMDb</span> {m.info.imdb ?? "--"} 
+                    <span className="text-[#5f9beb] text-[11px]">IMDb</span> {m.info.imdb ?? "--"}
                   </div>
                   <div className="rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 bg-[#5f9beb] text-white font-bold">
                     <span>{m.info.resolution ?? "--"}</span>

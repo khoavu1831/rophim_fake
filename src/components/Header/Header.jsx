@@ -56,7 +56,7 @@ function Header() {
       <header className="max-sm:relative max-sm:bg-[#0f111a] fixed top-0 left-0 font-poppins w-full z-50">
         <nav
           ref={headerRef}
-          className={`h-[70px] flex justify-between items-center w-auto px-5 ${isTop ? "bg-transparent" : "bg-[#0f111a]"} xl:relative`}
+          className={`h-[70px] xl:h-[90px] flex justify-between items-center w-auto px-5 ${isTop ? "bg-transparent" : "bg-[#0f111a]"} xl:relative`}
         >
           <div className={`flex items-center ${showSearch ? "max-xl:hidden!" : ""}`}>
             {/* BarsMenuIcon <= 1280px */}
