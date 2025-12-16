@@ -25,14 +25,14 @@ function Card({ movie, isVertical }) {
               )}
 
               {/* Subtitle & Dub */}
-              <div className="container-sub text-white absolute text-[9px] flex flex-col gap-1 bottom-0 pl-2 pb-2">
-                <span className="p-[1px_8px] rounded-xl bg-gray-500">
-                  {movie.subtitle}
-                  <strong>38</strong>
+              <div className="container-sub text-white absolute text-[9px] sm:text-[12px] flex max-sm:flex-col gap-1 bottom-0 pl-2 max-sm:pb-2">
+                <span className="max-sm:p-[1px_8px] p-[3px_8px] rounded-xl sm:rounded bg-gray-500">
+                  PĐ.
+                  <strong>{movie.subtitle}</strong>
                 </span>
-                <span className="p-[1px_8px] rounded-xl bg-green-500">
-                  {movie.dub}
-                  <strong>36</strong>
+                <span className="max-sm:p-[1px_8px] p-[3px_8px] rounded-xl sm:rounded bg-green-500">
+                  TM.
+                  <strong>{movie.dub}</strong>
                 </span>
               </div>
             </div>

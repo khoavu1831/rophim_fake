@@ -44,7 +44,7 @@ export const movies = [
     "subTitle": "Wake Up Dead Man: A Knives Out Mystery",
     "poster": "https://assets-prd.ignimgs.com/2025/09/08/wake-up-dead-man-button-replacement-1757362424305.jpg",
     "avatar": "https://assets-prd.ignimgs.com/2025/09/08/wake-up-dead-man-button-replacement-1757362424305.jpg",
-    "description": "Thám tử Benoit Blanc hợp tác với một linh mục trẻ để điều tra một vụ án bất khả thi tại nhà thờ ở thị trấn nhỏ mang quá khứ đen tối.",
+    "description": "Thám tử lừng danh Benoit Blanc (Daniel Craig) bị cuốn vào một vụ án bí ẩn tưởng chừng như không thể giải quyết, xảy ra ngay tại một nhà thờ cổ kính ở thị trấn nhỏ xa xôi, nơi ẩn chứa một quá khứ đen tối và đầy rẫy những lời đồn đại ma quái. Để tìm ra sự thật đằng sau vụ án hóc búa này, Blanc buộc phải hợp tác với một linh mục trẻ nhưng sắc sảo của địa phương. Cả hai phải đối mặt với những bí mật chôn giấu, sự mê tín lâu đời, và một cộng đồng khép kín không muốn sự thật bị phơi bày.",
     "info": {
       "imdb": 7.6,
       "resolution": "4K",
@@ -72,7 +72,7 @@ export const movies = [
     "subTitle": "The First Ride",
     "poster": "https://cdn-images.vtv.vn/thumb_w/1200/66349b6076cb4dee98746cf1/2025/10/30/fist-2-87389103801509301584396-87828775008306658056855.jpeg",
     "avatar": "https://cdn-images.vtv.vn/thumb_w/1200/66349b6076cb4dee98746cf1/2025/10/30/fist-2-87389103801509301584396-87828775008306658056855.jpeg",
-    "description": "Chuyến đi đầu đời đầy rắc rối và tiếng cười của hai anh em.",
+    "description": "Bộ phim kể về chuyến phiêu lưu đầu đời đầy rắc rối nhưng cũng không kém phần hài hước của hai anh em tính cách trái ngược. Khi buộc phải thực hiện một hành trình bất đắc dĩ, họ không chỉ phải đối mặt với những tình huống dở khóc dở cười và những chướng ngại vật khó lường trên đường, mà còn phải học cách chấp nhận và dựa vào nhau. Chuyến đi này trở thành bài học về tình thân, giúp cả hai gắn kết hơn qua những tiếng cười và thử thách.",
     "info": {
       "imdb": 7.2,
       "resolution": "HD",

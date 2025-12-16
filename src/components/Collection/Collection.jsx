@@ -14,15 +14,18 @@ function Collection({ movies, isVertical }) {
         {/* Thumbnail */}
         <div className="collection flex items-center justify-between mb-4">
           {/* Intro */}
-          <div className="intro flex items-center justify-between">
+          <div className="intro flex items-center justify-between w-full">
             {/* <div className="content text-[21px] font-bold bg-linear-to-r from-[#b8a1e2] to-[#ffffff] bg-clip-text text-transparent">
               Phim Hàn Quốc mới
             </div> */}
-            <div className="content text-[21px] font-bold text-white">
+            <div className="content text-[21px] sm:text-[25px] font-bold text-white">
               Phim Hàn Quốc mới
             </div>
 
-            <i className="fa-solid fa-angle-right text-white mr-3"></i>
+            <div className="more-icon flex items-center pr-[2%] text-white">
+              <a className="max-sm:hidden text-[14px] font-semibold" href="">Xem toàn bộ</a>
+              <i className="fa-solid fa-angle-right mr-3"></i>
+            </div>
           </div>
         </div>
 
@@ -37,7 +40,7 @@ function Collection({ movies, isVertical }) {
         >
           {movies.slice(0, MAXCARD).map((m) => (
             <SwiperSlide key={m.id}>
-              <Card movie={m} isVertical={isVertical}/>
+              <Card movie={m} isVertical={isVertical} />
             </SwiperSlide>
           ))}
         </Swiper>

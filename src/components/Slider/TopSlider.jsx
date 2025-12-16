@@ -27,21 +27,34 @@ function TopSlider({ movies, active }) {
                 </div>
 
                 {/* Tags */}
-                <div className="flex text-[10px] gap-2 text-white py-2">
-                  <span className="border rounded-md py-px px-1">
-                    <span className="text-[#5f9beb]">IMDb</span> {m.info.imdb ?? "--"}
-                  </span>
-                  <span className="border rounded-md py-px px-1 bg-[#5f9beb] text-black font-semibold">{m.info.resolution ?? "--"}</span>
-                  <span className="border rounded-md py-px px-1 bg-white text-black font-semibold">{m.info.ageLimit ?? "--"}</span>
-                  <span className="border rounded-md py-px px-1 bg-[#ffffff10]">{m.info.year ?? "--"}</span>
-                  <span className="border rounded-md py-px px-1 bg-[#ffffff10]">{m.info.duration ?? "--"}</span>
+                <div className="flex text-[10px] gap-2.5 text-white py-2 md:text-[12px] items-center">
+                  <div className="border rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 font-bold">
+                    <span className="text-[#5f9beb] text-[11px]">IMDb</span> {m.info.imdb ?? "--"} 
+                  </div>
+                  <div className="rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 bg-[#5f9beb] text-white font-bold">
+                    <span>{m.info.resolution ?? "--"}</span>
+                  </div>
+                  <div className="rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 bg-white text-black font-bold">
+                    <span>{m.info.ageLimit ?? "--"}</span>
+                  </div>
+                  <div className="border rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 bg-[#ffffff10]">
+                    <span>{m.info.year ?? "--"}</span>
+                  </div>
+                  <div className="border rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 bg-[#ffffff10]">
+                    <span>{m.info.duration ?? "--"}</span>
+                  </div>
                 </div>
 
                 {/* Genres tags */}
-                <div className="max-sm:hidden flex text-white gap-1.5">
+                <div className="max-sm:hidden flex text-white gap-1.5 lg:mb-3">
                   {m.info.genres.map(g => (
                     <a key={g} href="" className="text-[12px] py-1 px-2 bg-[#ffffff10] rounded font-semibold">{g}</a>
                   ))}
+                </div>
+
+                {/* Description */}
+                <div className="max-lg:hidden w-[540px] overflow-hidden">
+                  <p className="line-clamp-3 text-white text-[14px]">{m.description}</p>
                 </div>
 
                 {/* Touches */}
