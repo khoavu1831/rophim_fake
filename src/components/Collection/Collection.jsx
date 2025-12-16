@@ -44,10 +44,10 @@ function Collection({ movies, titleCollection, variant }) {
           breakpoints={{
             768: { slidesPerView: isVertical ? 4 : 2 },
             1024: { slidesPerView: isVertical ? 5 : 3 },
-            1440: { slidesPerView: isVertical ? 7 : 3 }
+            1440: { slidesPerView: isVertical ? 8 : 5 }
           }}
         >
-          {movies.slice(0, MAXCARD).map((m) => (
+          {movies.map((m) => (
             <SwiperSlide key={m.id}>
               <Card movie={m} variant={variant} />
             </SwiperSlide>

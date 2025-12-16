@@ -1,13 +1,14 @@
-import { useState } from "react";
-import { movies } from "../../utils/seed";
+import { useEffect, useState } from "react";
+// import { movies } from "../../utils/seed";
 import TopSlider from "./TopSlider";
 import BottomSlider from "./BottomSlider";
 
-function Slider() {
+function Slider({ movies }) {
   const [active, setActive] = useState(0);
+  
   const MAX_MOVIE = 5;
   const maxMovieShow = movies.slice(0, MAX_MOVIE);
-
+  
   return (
     <>
       <div className="w-full sm:relative bg-[#1b1d29]">
@@ -15,7 +16,6 @@ function Slider() {
           <TopSlider movies={maxMovieShow} active={active} />
           <BottomSlider movies={maxMovieShow} active={active} setActive={setActive}/>
         </div>
-        {/* <div className="pointer-events-none absolute bottom-0 left-0 w-full h-24 bg-linear-to-t from-black/80 to-transparent" /> */}
       </div>
     </>
   );
