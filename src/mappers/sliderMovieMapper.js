@@ -1,6 +1,6 @@
 import { TMDB_IMAGE_URL } from "../api/tmdb";
 
-export const mapMovieToSlider = (m) => {
+export const mapSliderMovie = (m) => {
   return {
     id: m.id,
     poster: m.backdrop_path ? `${TMDB_IMAGE_URL}/original${m.backdrop_path}` : "vietnam.png",
@@ -10,11 +10,11 @@ export const mapMovieToSlider = (m) => {
     description: m.overview,
     info: {
       imdb: m.vote_average.toFixed(1) ?? "--",
-      year: m.release_data ?? "--",
+      year: m.release_date.slice(0, 4) ?? "--",
       resolution: "HD",
-      ageLimit: "18+",
-      duration: "--",
-      genres: []
+      ageLimit: m.adult ? "18+" : "<18",
+      duration: `${m.runtime % 2}h ${(m.runtime / 2).toFixed(0)}m` ,
+      genres: m.genres
     }
   }
 }

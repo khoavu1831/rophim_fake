@@ -21,7 +21,7 @@ function Footer() {
               </div>
 
               {/* Icons */}
-              <div className="flex gap-2 text-white max-xl:mt-4 xl:pl-12 xl:border-l border-gray-400">
+              <div className="flex gap-2 md:gap-4 text-white max-xl:mt-4 xl:pl-12 xl:border-l border-gray-400">
                 <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
                   <i className="fa-brands fa-telegram text-xl"></i>
                 </a>
@@ -44,7 +44,7 @@ function Footer() {
             </div>
 
             {/* Contact */}
-            <div className="flex flex-wrap justify-around mt-4 text-white text-[13px] gap-2 xl:grid xl:grid-cols-3 xl:max-w-[50%]">
+            <div className="flex flex-wrap justify-around mt-4 text-white max-sm:text-[12px] text-[13px] gap-2 xl:grid xl:grid-cols-3 xl:max-w-[50%]">
               <a href="">Hỏi-Đáp</a>
               <a href="">Chính sách bảo mật</a>
               <a href="">Điều khoản sử dụng</a>
@@ -57,12 +57,14 @@ function Footer() {
             </div>
 
             {/* Quotes */}
-            <div className="mt-4 text-white max-sm:text-[12px] text-[14px] max-xl:text-center xl:max-w-[50%]">
+            <div className="mt-4 text-white max-sm:text-[11px] max-sm:font-extralight text-[14px] max-xl:text-center xl:max-w-[50%]">
               <p>RoPhim – Phim hay cả rổ - Trang xem phim online chất lượng cao miễn phí Vietsub, thuyết minh, lồng tiếng full HD. Kho phim mới khổng lồ, phim chiếu rạp, phim bộ, phim lẻ từ nhiều quốc gia như Việt Nam, Hàn Quốc, Trung Quốc, Thái Lan, Nhật Bản, Âu Mỹ… đa dạng thể loại. Khám phá nền tảng phim trực tuyến hay nhất 2024 chất lượng 4K!</p>
             </div>
+
+            {/* Copyright */}
             <div className="flex items-center mt-4 text-[#5f9beb]">
               <i className="fa-regular fa-copyright"></i>
-              <p className="font-semibold">2025 Rophim<span className="text-gray-400 font-light">Fake</span> - kaiwu</p>
+              <p className="font-semibold max-sm:text-[12px]">2025 Rophim<span className="text-gray-400 font-light">Fake</span> - kaiwu</p>
             </div>
           </div>
         </div>

@@ -1,5 +1,4 @@
 import Collection from "./Collection/Collection"
-// import { movies } from "../utils/seed"
 import { titleCollections } from "../utils/seed"
 
 function MainContent({ movies }) {

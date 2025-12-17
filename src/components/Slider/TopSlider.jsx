@@ -1,7 +1,57 @@
-function TopSlider({ movies, active }) {
+import { useState, useRef } from "react";
+
+function TopSlider({ movies, active, setActive }) {
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const containerRef = useRef(null);
+
+  // Min swipe distance (px)
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    // Swipe left - go to next slide 
+    if (isLeftSwipe) {
+      if (active < movies.length - 1) {
+        setActive(active + 1);
+      } else {
+        setActive(0);
+      }
+    }
+
+    // Swipe right - go to previous slide
+    if (isRightSwipe) {
+      if (active > 0) {
+        setActive(active - 1);
+      } else {
+        setActive(movies.length - 1);
+      }
+    }
+  };
+
   return (
-    <div className="relative w-full h-60 sm:h-[420px] lg:h-[600px] xl:h-[760px] 2xl:h-[860px] overflow-hidden">
-      <div className="flex h-full transition-transform duration-700">
+    <div
+      ref={containerRef}
+      className="relative w-full h-60 sm:h-[420px] lg:h-[600px] xl:h-[760px] 2xl:h-[860px] overflow-hidden"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
+      <div className="h-full">
         {
           movies.map((m, i) => (
             <div
@@ -29,10 +79,8 @@ function TopSlider({ movies, active }) {
                 }}
               ></div>
 
-
-
               {/* Content */}
-              <div className="absolute bottom-0 flex flex-col max-sm:items-center sm:pl-8 sm:pb-8 w-full">
+              <div className="absolute max-xl:bottom-0 bottom-20 flex flex-col max-sm:items-center sm:pl-8 sm:pb-8 w-full">
 
                 {/* Title */}
                 <div className="max-w-full">
@@ -66,7 +114,7 @@ function TopSlider({ movies, active }) {
                 {/* Genres tags */}
                 <div className="max-sm:hidden flex text-white gap-1.5 lg:mb-3">
                   {m.info.genres.map(g => (
-                    <a key={g} href="" className="text-[12px] py-1 px-2 bg-[#ffffff10] rounded font-semibold">{g}</a>
+                    <a key={g.id} href="" className="text-[12px] py-1 px-2 bg-[#ffffff10] rounded font-semibold">{g.name}</a>
                   ))}
                 </div>
 
@@ -78,16 +126,16 @@ function TopSlider({ movies, active }) {
                 {/* Touches */}
                 <div className="max-sm:hidden flex items-center gap-6 mt-6">
                   {/* Play */}
-                  <a href="" className="rounded-full bg-[#5f9beb] p-4 lg:p-6 shadow-[0px_4px_10px_5px_rgba(0,149,182,0.1)]">
-                    <i className="fa-solid fa-play text-black text-[18px]"></i>
-                  </a>
+                    <a href="" className="flex justify-center items-center rounded-full bg-[#5f9beb] h-[60px] w-[60px] lg:h-[70px] lg:w-[70px] lg:p-6 shadow-[0px_4px_10px_5px_rgba(0,149,182,0.4)]">
+                      <i className="fa-solid fa-play text-black text-[18px] lg:text-[26px]"></i>
+                    </a>
                   {/* Like + Info */}
-                  <div className="flex items-center text-white bg-[#ffffff2d]/80 text-[18px] rounded-l-full rounded-r-full h-12 border">
-                    <a href="" className="px-6 border-r h-full leading-12">
+                  <div className="flex items-center text-white bg-transparent text-[18px] rounded-l-full rounded-r-full h-12 border">
+                    <a href="" className="px-5 border-r h-full leading-12">
                       <i className="fa-solid fa-heart"></i>
                     </a>
 
-                    <a href="" className="px-6 h-full leading-12">
+                    <a href="" className="px-5 h-full leading-12">
                       <i className="fa-solid fa-circle-info"></i>
                     </a>
                   </div>
