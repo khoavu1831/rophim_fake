@@ -12,6 +12,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      VITE_TMDB_TOKEN: ${{ secrets.VITE_TMDB_TOKEN }}
+      VITE_TMDB_BASE_URL: ${{ secrets.VITE_TMDB_BASE_URL }}
+      VITE_TMDB_IMAGE_URL: ${{ secrets.VITE_TMDB_IMAGE_URL }}
     steps:
       - uses: actions/checkout@v4
 
