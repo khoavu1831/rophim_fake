@@ -34,7 +34,7 @@ function SubNav({ data, isOpen, col, responsive }) {
         {data.map((genreName) => (
           <span
             key={genreName}
-            className="p-2 truncate hover:bg-[#22242c] rounded hover:text-[#5f9beb] cursor-pointer text-white"
+            className="p-2 truncate hover:bg-[#22242c] rounded hover:text-mainblue cursor-pointer text-white"
           >
             {genreName}
           </span>

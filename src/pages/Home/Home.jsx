@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-import MainContent from "../components/MainContent";
-import Slider from "../components/Slider/Slider";
-import { getDetailsMovie, getPopularMovies, getSliderMovies, getTrendingMovies } from "../services/movieService";
-import { mapTrendingMovie } from "../mappers/trendingMovieMapper";
-import { mapSliderMovie } from "../mappers/sliderMovieMapper";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header/Header";
+import MainContent from "./components/MainContent";
+import Slider from "./components/Slider/Slider";
+import { getSliderMovies, getTrendingMovies } from "../../services/movieService";
+import { mapTrendingMovie } from "../../mappers/trendingMovieMapper";
+import { mapSliderMovie } from "../../mappers/sliderMovieMapper";
 
 function Home() {
   const [movies, setMovies] = useState([]);

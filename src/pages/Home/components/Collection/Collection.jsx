@@ -15,14 +15,12 @@ function Collection({ movies, titleCollection, variant }) {
         {/* Thumbnail */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center max-sm:justify-between w-full">
-            {/* <div className="content text-[21px] font-bold bg-linear-to-r from-[#b8a1e2] to-[#ffffff] bg-clip-text text-transparent">
-              Phim Hàn Quốc mới
-            </div> */}
+            {/* Title */}
             <div className="text-[22px] sm:text-[25px] font-medium text-white max-w-[86%]">
               {titleCollection}
             </div>
 
-            {/* More icon */}
+            {/* Icon-more */}
             <div className="flex items-center text-white sm:pl-5">
               {/* <h2 className="max-sm:hidden text-[14px] font-semibold">Xem toàn bộ</h2> */}
               <a
@@ -44,7 +42,7 @@ function Collection({ movies, titleCollection, variant }) {
           breakpoints={{
             768: { slidesPerView: isVertical ? 4 : 2 },
             1024: { slidesPerView: isVertical ? 5 : 3 },
-            1440: { slidesPerView: isVertical ? 8 : 5 }
+            1440: { slidesPerView: isVertical ? 8 : 3 }
           }}
         >
           {movies.map((m) => (

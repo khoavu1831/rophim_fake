@@ -1,0 +1,46 @@
+function CommentItem() {
+  return (
+    <>
+      <div className="bg-black/60 rounded-xl py-2.5 px-5 ">
+        <div className="flex gap-4 text-[12px] w-full">
+          {/* Avatar */}
+          <div className="cover-image h-12 w-12 shrink-0">
+            <img
+              className="w-full h-full object-cover rounded-full"
+              src="https://www.rophim.li/images/avatars/pack1/03.jpg"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-col gap-1">
+            {/* Heading content */}
+            <div className="flex gap-2">
+              {/* Name user */}
+              <h4>Tuine</h4>
+
+              {/* Gender icon */}
+              <span>
+                <i className="fa-solid fa-mars text-mainblue"></i>
+              </span>
+
+              {/* Comment */}
+              <p className="line-clamp-1">hài quải chè bá bá ơiài quải chè bá bá ơiài quải chè bá bá ơiài quải chè bá bá ơi</p>
+            </div>
+
+            {/* Footer content */}
+            <div className="flex gap-2 items-center">
+              <span className="text-mainblue text-[8px]">
+                <i class="fa-solid fa-play"></i>
+              </span>
+
+              {/* Name movie */}
+              <span className="text-gray-500">Song Quỹ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default CommentItem

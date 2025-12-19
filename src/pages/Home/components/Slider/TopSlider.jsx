@@ -46,7 +46,7 @@ function TopSlider({ movies, active, setActive }) {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-60 sm:h-[420px] lg:h-[600px] xl:h-[760px] 2xl:h-[860px] overflow-hidden"
+      className="relative w-full h-60 sm:h-105 lg:h-150 xl:h-190 2xl:h-215 overflow-hidden"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -89,15 +89,15 @@ function TopSlider({ movies, active, setActive }) {
 
                 {/* Sub title */}
                 <div className="max-w-full">
-                  <p className="text-[#5f9beb] truncate text-[12px] sm:text-[16px] max-sm:px-8 sm:py-2">{m.subTitle}</p>
+                  <p className="text-mainblue truncate text-[12px] sm:text-[16px] max-sm:px-8 sm:py-2">{m.subTitle}</p>
                 </div>
 
                 {/* Tags */}
                 <div className="flex text-[10px] gap-2.5 text-white py-2 md:text-[12px] items-center">
                   <div className="border rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 font-bold">
-                    <span className="text-[#5f9beb] text-[11px]">IMDb</span> {m.info.imdb ?? "--"}
+                    <span className="text-mainblue text-[11px]">IMDb</span> {m.info.imdb ?? "--"}
                   </div>
-                  <div className="rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 bg-[#5f9beb] text-white font-bold">
+                  <div className="rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 bg-mainblue text-white font-bold">
                     <span>{m.info.resolution ?? "--"}</span>
                   </div>
                   <div className="rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 bg-white text-black font-bold">
@@ -119,14 +119,14 @@ function TopSlider({ movies, active, setActive }) {
                 </div>
 
                 {/* Description */}
-                <div className="max-lg:hidden w-[540px] overflow-hidden">
+                <div className="max-lg:hidden w-135 overflow-hidden">
                   <p className="line-clamp-3 text-white text-[14px]">{m.description}</p>
                 </div>
 
                 {/* Touches */}
                 <div className="max-sm:hidden flex items-center gap-6 mt-6">
                   {/* Play */}
-                    <a href="" className="flex justify-center items-center rounded-full bg-[#5f9beb] h-[60px] w-[60px] lg:h-[70px] lg:w-[70px] lg:p-6 shadow-[0px_4px_10px_5px_rgba(0,149,182,0.4)]">
+                    <a href="" className="flex justify-center items-center rounded-full bg-mainblue h-15 w-15 lg:h-17.5 lg:w-17.5 lg:p-6 shadow-[0px_4px_10px_5px_rgba(0,149,182,0.4)]">
                       <i className="fa-solid fa-play text-black text-[18px] lg:text-[26px]"></i>
                     </a>
                   {/* Like + Info */}

@@ -8,7 +8,7 @@ function Slider({ movies }) {
   return (
     <>
       <div className="w-full sm:relative bg-[#1b1d29]">
-        <div className="max-sm:max-h-[300px] flex flex-col ">
+        <div className="max-sm:max-h-75 flex flex-col ">
           <TopSlider movies={movies} active={active} setActive={setActive} />
           <BottomSlider movies={movies} active={active} setActive={setActive}/>
         </div>

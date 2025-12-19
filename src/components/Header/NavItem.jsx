@@ -3,7 +3,7 @@ import SubNav from "./SubNav"
 function NavItem({ label, href, data, col, activeNav, setActiveNav, variant = "desktop", responsive }) {
   const isOpen = activeNav === label;
 
-  const toggle = (e) => {
+  const toggle = () => {
     if (data) {
       setActiveNav(isOpen ? null : label);
     }
@@ -12,7 +12,7 @@ function NavItem({ label, href, data, col, activeNav, setActiveNav, variant = "d
   return (
     <div className={`relative cursor-pointer ${variant === "mobile" ? "p-2 text-[13px]" : ""}`}>
       <a
-        className={`hover:text-[#5f9beb] ${variant === "mobile" ? "text-white" : " "}`}
+        className={`hover:text-mainblue ${variant === "mobile" ? "text-white" : " "}`}
         href={href}
         onClick={toggle}>
         {label}

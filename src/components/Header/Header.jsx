@@ -56,7 +56,7 @@ function Header() {
       <header className="max-sm:relative max-sm:bg-[#0f111a] fixed top-0 left-0 font-poppins w-full z-50">
         <nav
           ref={headerRef}
-          className={`h-[70px] flex justify-between items-center w-auto px-5 ${isTop ? "bg-transparent xl:h-[90px] " : "bg-[#0f111a] xl:h-[70px]"} xl:relative`}
+          className={`h-17.5 flex justify-between items-center w-auto px-5 ${isTop ? "bg-transparent xl:h-22.5 " : "bg-[#0f111a] xl:h-17.5"} xl:relative`}
         >
           <div className={`flex items-center ${showSearch ? "max-xl:hidden!" : ""}`}>
             {/* BarsMenuIcon <= 1280px */}
@@ -86,7 +86,7 @@ function Header() {
 
           {/* SearchBar > 1280px */}
           <div className="max-xl:hidden flex grow ml-1.5">
-            <search className="flex items-center bg-[#22242c] px-4 py-3 rounded border focus-within:border-white max-w-[440px] w-full">
+            <search className="flex items-center bg-[#22242c] px-4 py-3 rounded border focus-within:border-white max-w-110 w-full">
               <i className="fa-solid fa-magnifying-glass text-white"></i>
               <input
                 className="text-white text-[13px] outline-0 ml-4 w-full placeholder:text-white"
@@ -100,7 +100,7 @@ function Header() {
           {showSearch && (
             <div
               ref={headerRef}
-              className={`fixed top-0 left-0 w-full px-2 h-[70px] ${isTop ? "bg-transparent" : "bg-[#0f111a]"}`}
+              className={`fixed top-0 left-0 w-full px-2 h-17.5 ${isTop ? "bg-transparent" : "bg-[#0f111a]"}`}
             >
               <div className="flex items-center justify-between m-3">
                 <search
@@ -111,7 +111,7 @@ function Header() {
                     <i className="fa-solid fa-magnifying-glass text-white"></i>
                   </div>
                   <input
-                    className="focus-within: text-white text-[13px] outline-0 w-full placeholder:text-white h-[30px] pr-8"
+                    className="focus-within: text-white text-[13px] outline-0 w-full placeholder:text-white h-7.5 pr-8"
                     type="text"
                     placeholder="Tìm kiếm phim, diễn viên"
                   />
@@ -152,7 +152,7 @@ function Header() {
             className="xl:hidden absolute top-full left-0 mt-1 w-full md:max-w-[320px] px-1.5 z-50"
           >
             <div className="bg-[#2b3561] rounded-[14px] flex flex-col py p-4">
-              <button className="bg-white flex justify-center items-center rounded-3xl px-3 text-[13px] font-medium opacity-90 cursor-pointer hover:opacity-100 w-full h-[38px] ">
+              <button className="bg-white flex justify-center items-center rounded-3xl px-3 text-[13px] font-medium opacity-90 cursor-pointer hover:opacity-100 w-full h-9.5 ">
                 <i className="fa-solid fa-user"></i>
                 <h4 className="ml-1.5">Thành viên</h4>
               </button>

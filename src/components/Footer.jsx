@@ -5,7 +5,7 @@ function Footer() {
         <div className="px-4 xl:px-5">
           <div className="flex flex-col py-8 max-xl:items-center xl:p-8">
             {/* Vietnam peak */}
-            <button className="font-light bg-red-500 px-3 text-white flex justify-center items-center rounded-3xl max-sm:text-[12px] text-[15px] cursor-pointer w-full h-[38px] max-w-[360px] ">
+            <button className="font-light bg-red-500 px-3 text-white flex justify-center items-center rounded-3xl max-sm:text-[12px] text-[15px] cursor-pointer w-full h-9.5 max-w-90 ">
               <img src="vietnam.png" alt="" />
               <h4 className="ml-1.5">Hoàng Sa & Trường Sa là của <span className="text-yellow-400">Việt Nam</span>!</h4>
             </button>
@@ -22,22 +22,22 @@ function Footer() {
 
               {/* Icons */}
               <div className="flex gap-2 md:gap-4 text-white max-xl:mt-4 xl:pl-12 xl:border-l border-gray-400">
-                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
+                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-mainblue" href="">
                   <i className="fa-brands fa-telegram text-xl"></i>
                 </a>
-                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
+                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-mainblue" href="">
                   <i className="fa-brands fa-discord"></i>
                 </a>
-                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
+                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-mainblue" href="">
                   <i className="fa-brands fa-x-twitter"></i>
                 </a>
-                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
+                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-mainblue" href="">
                   <i className="fa-brands fa-facebook"></i>
                 </a>
-                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
+                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-mainblue" href="">
                   <i className="fa-brands fa-tiktok"></i>
                 </a>
-                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-[#5f9beb]" href="">
+                <a className="flex justify-center items-center w-10 h-10 rounded-full bg-mainblue" href="">
                   <i className="fa-brands fa-youtube"></i>
                 </a>
               </div>
@@ -62,7 +62,7 @@ function Footer() {
             </div>
 
             {/* Copyright */}
-            <div className="flex items-center mt-4 text-[#5f9beb]">
+            <div className="flex items-center mt-4 text-mainblue">
               <i className="fa-regular fa-copyright"></i>
               <p className="font-semibold max-sm:text-[12px]">2025 Rophim<span className="text-gray-400 font-light">Fake</span> - kaiwu</p>
             </div>
