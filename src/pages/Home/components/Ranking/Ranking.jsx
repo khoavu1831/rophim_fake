@@ -8,17 +8,14 @@ function Ranking() {
       <div className="container-ranking w-full">
         <div className="m-4 border rounded-2xl border-gray-700">
           {/* Comment top - xl*/}
-          <div className="">
-
           <SliderTopComment />
-          </div>
 
           <div className="grid xl:grid-cols-[1fr_1fr_1.4fr] divide-x divide-gray-700">
             {/* Hotest movies - sm -> xl*/}
-            <TypeRank />
+            <TypeRank context={"SÔi nổi nhất"} icon={"fa-clapperboard"}/>
 
             {/* Lovest movies - sm -> xl*/}
-            <TypeRank />
+            <TypeRank context={"Yêu thích nhất"} icon={"fa-heart-circle-check"}/>
 
             {/* Comment new - xl */}
             <SliderNewComment />

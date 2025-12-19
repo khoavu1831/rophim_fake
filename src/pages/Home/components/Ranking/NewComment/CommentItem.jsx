@@ -1,12 +1,15 @@
 function CommentItem() {
   return (
     <>
-      <div className="bg-black/60 rounded-xl py-2.5 px-5 ">
-        <div className="flex gap-4 text-[12px] w-full">
+      <div className="bg-black/60 rounded-xl py-2 px-5 cursor-pointer border border-transparent hover:border-gray-400 hover:border">
+        <a
+          href=""
+          className="flex gap-4 text-[12px] w-full"
+        >
           {/* Avatar */}
-          <div className="cover-image h-12 w-12 shrink-0">
+          <div className="cover-image h-10 w-10 shrink-0">
             <img
-              className="w-full h-full object-cover rounded-full"
+              className="w-full h-full object-cover rounded-full hover:opacity-80"
               src="https://www.rophim.li/images/avatars/pack1/03.jpg"
             />
           </div>
@@ -30,14 +33,14 @@ function CommentItem() {
             {/* Footer content */}
             <div className="flex gap-2 items-center">
               <span className="text-mainblue text-[8px]">
-                <i class="fa-solid fa-play"></i>
+                <i className="fa-solid fa-play"></i>
               </span>
 
               {/* Name movie */}
-              <span className="text-gray-500">Song Quỹ</span>
+              <span className="text-gray-500 hover:text-mainblue">Song Quỹ</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </>
   )

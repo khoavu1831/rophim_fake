@@ -6,16 +6,15 @@ function SliderNewComment() {
   return (
     <>
       <div className="flex flex-col px-6 pb-5 text-white">
-        <HeaderTypeRank />
+        <HeaderTypeRank context={"Bình luận mới"} icon={"fa-bolt"} />
 
         {/* List comment */}
         <Swiper
           direction="vertical"
           loop="true"
           slidesPerView={4}
-          spaceBetween={0}
           mousewheel
-          className="h-72"
+          className="h-62"
         >
           <SwiperSlide><CommentItem /></SwiperSlide>
           <SwiperSlide><CommentItem /></SwiperSlide>

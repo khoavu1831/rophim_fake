@@ -6,7 +6,7 @@ function SliderTopComment() {
   return (
     <>
       <div className="pb-8 px-6 border-b border-gray-700">
-        <HeaderTypeRank />
+        <HeaderTypeRank context={"Top bình luận"} icon={"fa-medal"}/>
 
         <Swiper
           loop="true"
@@ -14,7 +14,7 @@ function SliderTopComment() {
           slidesPerView={1}
           breakpoints={{
             768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
             1440: { slidesPerView: 5 }
           }}
         >

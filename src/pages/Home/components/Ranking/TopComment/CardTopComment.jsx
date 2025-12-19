@@ -2,10 +2,10 @@ function CardTopComment() {
   return (
     <>
       <div className="card-container">
-        <div className="wrapper relative rounded-lg overflow-hidden">
+        <div className="group wrapper relative rounded-lg overflow-hidden">
           {/* Background image */}
           <img
-            className="absolute blur-sm brightness-50 inset-0 aspect-2/1 w-full h-full object-cover"
+            className="absolute blur-sm brightness-50 group-hover:brightness-70 inset-0 aspect-2/1 w-full h-full object-cover"
             src="https://static.nutscdn.com/vimg/300-0/5afae857d493f298886cff86b0fae07a.webp"
           />
 
@@ -20,7 +20,7 @@ function CardTopComment() {
                 {/* Avatar */}
                 <div className="cover-avatar h-12 w-12">
                   <img
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-full h-full object-cover rounded-full group-hover:border-2 border-white hover:opacity-80"
                     src="https://www.rophim.li/images/avatars/pack1/08.jpg"
                   />
                 </div>
@@ -40,7 +40,7 @@ function CardTopComment() {
               {/* Right section */}
               <div className="cover-img-right h-full w-14">
                 <img
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover cursor-pointer"
                   src="https://static.nutscdn.com/vimg/300-0/5afae857d493f298886cff86b0fae07a.webp"
                 />
               </div>
