@@ -63,9 +63,9 @@ function TopSlider({ movies, active, setActive }) {
               />
 
               {/* Effect shadow for image */}
-              <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-[#1b1d29] via-[#1b1d29]/1 to-transparent"></div>
-              <div className="absolute inset-0 pointer-events-none bg-linear-to-r from-[#1b1d29]/95 via-[#1b1d29]/1 to-transparent"></div>
-              <div className="absolute inset-0 pointer-events-none bg-linear-to-l from-[#1b1d29]/95 via-[#1b1d29]/1 to-transparent"></div>
+              <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-[#1b1d29] via-[#1b1d29]/0 "></div>
+              <div className="max-sm:hidden absolute inset-0 pointer-events-none bg-linear-to-r from-[#1b1d29] via-[#1b1d29]/0 to-transparent"></div>
+              <div className="max-sm:hidden absolute inset-0 pointer-events-none bg-linear-to-l from-[#1b1d29] via-[#1b1d29]/0 to-transparent"></div>
 
               {/* Grid noise */}
               <div

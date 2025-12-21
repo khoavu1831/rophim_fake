@@ -12,7 +12,7 @@ export const getTrendingMovies = () =>
 
 export const getSliderMovies = async () => {
     const popularMovies = await getPopularMovies();
-    const topMovies = popularMovies.results.slice(0, 5);
+    const topMovies = popularMovies.results.slice(0, 6);
     const detailPromises = topMovies.map(movie => getDetailsMovie(movie.id));
 
     return await Promise.all(detailPromises);

@@ -86,7 +86,7 @@ function Header() {
 
           {/* SearchBar > 1280px */}
           <div className="max-xl:hidden flex grow ml-1.5">
-            <search className="flex items-center bg-[#22242c] px-4 py-3 rounded border focus-within:border-white max-w-110 w-full">
+            <search className="flex items-center bg-[#22242c]/30  px-4 py-3 rounded border focus-within:border-white max-w-110 w-full">
               <i className="fa-solid fa-magnifying-glass text-white"></i>
               <input
                 className="text-white text-[13px] outline-0 ml-4 w-full placeholder:text-white"

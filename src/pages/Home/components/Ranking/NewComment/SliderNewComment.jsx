@@ -14,7 +14,7 @@ function SliderNewComment() {
           loop="true"
           slidesPerView={4}
           mousewheel
-          className="h-62"
+          className="h-70 w-full!"
         >
           <SwiperSlide><CommentItem /></SwiperSlide>
           <SwiperSlide><CommentItem /></SwiperSlide>

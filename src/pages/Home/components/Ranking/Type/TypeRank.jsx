@@ -32,9 +32,9 @@ function TypeRank({ context, icon }) {
 
       {/* Modal popup */}
       {toggle && (
-        <div className="fixed inset-0 bg-[#2b3561]/80 z-80">
+        <div className="fixed inset-0 bg-[#1b1d29]/80 z-80">
           <div className="max-h-screen overflow-y-auto py-4">
-            <div className="flex flex-col text-white bg-[#1b1d29]/80 rounded-2xl m-auto max-md:w-full md:max-w-140 pr-2 pt-2 pb-4 pl-10 max-sm:pl-5">
+            <div className="flex flex-col text-white bg-[#2b3561]/80 rounded-2xl m-auto max-md:w-full md:max-w-140 pr-2 pt-2 pb-4 pl-10 max-sm:pl-5">
               {/* Close button */}
               <button
                 className="cursor-pointer flex justify-end"

@@ -1,7 +1,7 @@
 function CommentItem() {
   return (
     <>
-      <div className="bg-black/60 rounded-xl py-2 px-5 cursor-pointer border border-transparent hover:border-gray-400 hover:border">
+      <div className="bg-black/60 rounded-xl py-3 px-5 cursor-pointer border border-transparent hover:border-gray-400 hover:border">
         <a
           href=""
           className="flex gap-4 text-[12px] w-full"

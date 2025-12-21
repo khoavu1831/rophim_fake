@@ -10,18 +10,23 @@ function Ranking() {
           {/* Comment top - xl*/}
           <SliderTopComment />
 
-          <div className="grid xl:grid-cols-[1fr_1fr_1.4fr] divide-x divide-gray-700">
+          <div className="grid grid-flow-col auto-cols-[100%]
+            lg:grid-rows-2 xl:grid-flow-col
+            md:auto-cols-[50%]
+            overflow-x-auto xl:overflow-visible
+            divide-x divide-y divide-gray-700"
+          >
             {/* Hotest movies - sm -> xl*/}
-            <TypeRank context={"SÔi nổi nhất"} icon={"fa-clapperboard"}/>
+            <TypeRank context={"SÔi nổi nhất"} icon={"fa-fire"} />
 
             {/* Lovest movies - sm -> xl*/}
-            <TypeRank context={"Yêu thích nhất"} icon={"fa-heart-circle-check"}/>
+            <TypeRank context={"Yêu thích nhất"} icon={"fa-heart-circle-check"} />
+
+            {/* Genre - sm ->  lg*/}
+            <TypeRank context={"Thể loại hot"} icon={"fa-clipboard-list"} />
 
             {/* Comment new - xl */}
             <SliderNewComment />
-
-            {/* Genre - sm ->  lg*/}
-            {/* <TypeRank /> */}
           </div>
         </div>
       </div>

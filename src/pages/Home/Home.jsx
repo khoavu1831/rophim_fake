@@ -24,7 +24,7 @@ function Home() {
   }, [])
 
   return (
-    <div className="h-full">
+    <div className="h-full bg-[#101117]">
       <Header />
       <Slider movies={movies} />
       <MainContent movies={trendingMovies} />
