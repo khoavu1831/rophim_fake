@@ -95,7 +95,9 @@ function TopSlider({ movies, active, setActive }) {
                 {/* Tags */}
                 <div className="flex text-[10px] gap-2.5 text-white py-2 md:text-[12px] items-center">
                   <div className="border rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 font-bold">
-                    <span className="text-mainblue text-[11px]">IMDb</span> {m.info.imdb ?? "--"}
+                    <span className="text-mainblue text-[11px]">IMDb</span>
+                    <span>{m.info.imdb ?? "--"}</span>
+
                   </div>
                   <div className="rounded-md px-1 py-1 lg:px-1.5 lg:py-1.5 bg-mainblue text-white font-bold">
                     <span>{m.info.resolution ?? "--"}</span>
@@ -126,9 +128,9 @@ function TopSlider({ movies, active, setActive }) {
                 {/* Touches */}
                 <div className="max-sm:hidden flex items-center gap-6 mt-6">
                   {/* Play */}
-                    <a href="" className="flex justify-center items-center rounded-full bg-mainblue h-15 w-15 lg:h-17.5 lg:w-17.5 lg:p-6 shadow-[0px_4px_10px_5px_rgba(0,149,182,0.4)]">
-                      <i className="fa-solid fa-play text-black text-[18px] lg:text-[26px]"></i>
-                    </a>
+                  <a href="" className="flex justify-center items-center rounded-full bg-mainblue h-15 w-15 lg:h-17.5 lg:w-17.5 lg:p-6 shadow-[0px_4px_10px_5px_rgba(0,149,182,0.4)]">
+                    <i className="fa-solid fa-play text-black text-[18px] lg:text-[26px]"></i>
+                  </a>
                   {/* Like + Info */}
                   <div className="flex items-center text-white bg-transparent text-[18px] rounded-l-full rounded-r-full h-12 border">
                     <a href="" className="px-5 border-r h-full leading-12">

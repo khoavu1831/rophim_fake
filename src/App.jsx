@@ -1,9 +1,11 @@
 import Home from "./pages/Home/Home"
+import Movie from "./pages/Movie/Movie"
 function App() {
 
   return (
     <>
-      <Home />
+      {/* <Home /> */}
+      <Movie />
     </>
   )
 }
