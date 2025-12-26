@@ -6,7 +6,7 @@ function RowDetailsMovie({ label, contents }) {
 
         <div className="vlue gap-1">
           {contents.map(m => (
-            <span className="text-white font-light line-clamp-2">{m}</span>
+            <span key={m} className="text-white font-light line-clamp-2">{m}</span>
           ))}
         </div>
       </div>

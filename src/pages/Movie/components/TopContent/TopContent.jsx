@@ -1,23 +1,24 @@
 import { useState } from "react"
 import RowDetailsMovie from "./RowDetailsMovie"
-import ActionButtons from "./ActionsButton";
+import ActionButtons from "../MainContent/PlayBars/ActionsButton";
 
-function HeaderMovie() {
+function TopContent() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="top-wrap relative bg-[#1b1d29]">
+    <>
       {/* Background top */}
-      <div className="cover-fade max-sm:h-50 z-0">
-        {/* Cover bg-top */}
-        {/* <div className="bg-[url(https://static.nutscdn.com/vimg/400-0/567c678a62a49b1363c370dbb030cbb0.jpg)]"></div> */}
-        <img
-          className="w-full h-full object-cover saturate-110 contrast-105"
-          src="https://static.nutscdn.com/vimg/400-0/567c678a62a49b1363c370dbb030cbb0.jpg"
-        />
-
+      <div
+        className="
+          bg-[url('https://static.nutscdn.com/vimg/1920-0/1d83e95bbd7b059d7e0886701bc81043.webp')]
+          bg-cover opacity-50
+          h-50 sm:h-75 xl:h-144
+          w-full
+          relative z-0
+        "
+      >
         {/* Effect shadow for image */}
-        {/* <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-[#1b1d29] via-[#1b1d29]/90 "></div> */}
+        <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-[#1b1d29] via-[#1b1d29]/80"></div>
 
         {/* Grid noise */}
         <div
@@ -33,13 +34,13 @@ function HeaderMovie() {
       </div>
 
       {/* Info */}
-      <div className="container-info flex justify-center px-4 z-20">
+      <div className="container-info relative flex justify-center px-4 -mt-37.5 z-10">
         <div className="wrapper-info flex flex-col justify-center items-center">
           {/* Poster */}
           <div className="cover-poster w-30 h-45">
             <img
-              className="w-full h-full object-cover"
-              src="https://static.nutscdn.com/vimg/300-0/fa6a6074511b4b5bbc7ab417eb62e0fd.jpg"
+              className="w-full h-full object-cover rounded-2xl"
+              src="https://static.nutscdn.com/vimg/300-0/d10e69cc4b68fd2974c9d0314c4b9720.jpg"
               alt=""
             />
           </div>
@@ -116,40 +117,10 @@ function HeaderMovie() {
               <RowDetailsMovie label={"Sản xuất"} contents={["Walt Disney Animation Studios", "Walt Disney Pictures"]} />
             </div>
           )}
-
-          {/* Bars play */}
-          <div className="container-bars py-4">
-            <div className="wrapper flex flex-col w-full gap-4">
-              <div className="btn-play">
-                <button className="bg-linear-30 from-mainblue to-white w-full flex justify-center items-center rounded-4xl px-24 py-4 text-[16px] cursor-pointer">
-                  <i className="fa-solid fa-play"></i>
-                  <h4 className="ml-2 text-nowrap">Xem ngay</h4>
-                </button>
-              </div>
-
-              <div className="action-btns flex justify-center my-4">
-                <ActionButtons icon={"fa-heart"} label={"Yêu thích"} />
-                <ActionButtons icon={"fa-plus"} label={"Thêm vào"} />
-                <ActionButtons icon={"fa-share"} label={"Chia sẻ"} />
-
-                <div className="ml-2">
-                  <button className="bg-[#1a2760] w-full flex items-center rounded-4xl py-1 px-2 cursor-pointer">
-                    <img
-                      src="movie.svg"
-                      className="w-8 h-8 object-cover"
-                    />
-
-                    <span className="ml-1.5 text-white font-semibold">9.0</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-
       </div>
-    </div >
+    </ >
   )
 }
 
-export default HeaderMovie
+export default TopContent

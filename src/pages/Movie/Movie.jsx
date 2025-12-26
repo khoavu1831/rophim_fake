@@ -1,12 +1,12 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header/Header";
-import ContentMovie from "./components/ContentMovie/ContentMovie";
+import Main from "./components/Main";
 
 function Movie() {
   return (
     <>
       <Header />
-      <ContentMovie />    
+      <Main />    
       <Footer />
     </>
   )
