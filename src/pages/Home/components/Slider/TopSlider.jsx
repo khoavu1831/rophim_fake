@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 function TopSlider({ movies, active, setActive }) {
   const [touchStart, setTouchStart] = useState(null);
@@ -57,10 +58,12 @@ function TopSlider({ movies, active, setActive }) {
             <div
               key={m.id}
               className={`absolute inset-0 transition-opacity duration-700 ${i === active ? "opacity-100" : "opacity-0 z-0"}`}>
-              <img
-                src={m.poster}
-                className="w-full h-full object-cover saturate-110 contrast-105"
-              />
+              <Link to={"/movie"}>
+                <img
+                  src={m.poster}
+                  className="w-full h-full object-cover saturate-110 contrast-105"
+                />
+              </Link>
 
               {/* Effect shadow for image */}
               <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-[#1b1d29] via-[#1b1d29]/0 "></div>

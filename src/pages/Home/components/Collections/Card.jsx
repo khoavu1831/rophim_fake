@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Card({ movie, variant }) {
   const isVertical = variant === "vertical";
 
@@ -7,7 +9,7 @@ function Card({ movie, variant }) {
       <div className="w-full">
         <div className="flex flex-col">
           {/* Image */}
-          <a href="">
+          <Link to={"/movie"}>
             <div className="cover-thumbnail relative">
               {/* Checking variant type image */}
               {isVertical ? (
@@ -46,7 +48,7 @@ function Card({ movie, variant }) {
                 </span> */}
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* Content */}
           <div className={`content flex flex-col text-white pt-4 ${isVertical ? "text-center" : "max-md:text-center"}`}
