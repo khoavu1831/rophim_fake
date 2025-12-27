@@ -8,7 +8,7 @@ function PlaysBar() {
         <div className="wrapper flex flex-col w-full gap-2">
           {/* Play button */}
           <div className="btn-play flex justify-center">
-            <button className="bg-linear-30 from-mainblue to-white max-sm:max-w-[288px] w-full flex justify-center items-center rounded-4xl py-4 text-[16px] cursor-pointer">
+            <button className="bg-linear-30 from-mainblue to-white max-w-[288px] w-full flex justify-center items-center rounded-4xl py-4 text-[16px] cursor-pointer">
               <i className="fa-solid fa-play"></i>
               <h4 className="ml-2 text-nowrap">Xem ngay</h4>
             </button>

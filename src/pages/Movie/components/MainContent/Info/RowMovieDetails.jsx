@@ -1,4 +1,4 @@
-function RowDetailsMovie({ label, contents }) {
+function RowMovieDetails({ label, contents }) {
   return (
     <>
       <div className="networks flex flex-start gap-2 text-[14px] mb-4">
@@ -14,4 +14,4 @@ function RowDetailsMovie({ label, contents }) {
   )
 }
 
-export default RowDetailsMovie
+export default RowMovieDetails

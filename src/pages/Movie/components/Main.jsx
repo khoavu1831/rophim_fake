@@ -1,12 +1,14 @@
-import TopContent from "./TopContent/TopContent"
+import Backdrop from "./Backdrop"
 import MainContent from "./MainContent/MainContent"
 
 function Main() {
   return (
     <>
-      <div className="top-wrap flex flex-col relative bg-[#1b1d29]">
-        <TopContent />
-        <MainContent />
+      <div className="relative bg-[#1b1d29]">
+        <div className="flex flex-col">
+          <Backdrop />
+          <MainContent />
+        </div>
       </div>
     </>
   )

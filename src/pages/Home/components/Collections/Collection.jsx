@@ -1,4 +1,4 @@
-import Card from "./Card"
+import Card from "../../../../components/Card"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation } from "swiper/modules"
 import "swiper/css"
@@ -24,7 +24,7 @@ function Collection({ movies, titleCollection, variant, type }) {
 
           {/* Icon-more*/}
           <div className={`group flex items-center text-white sm:ml-5 cursor-pointer hover:text-mainblue transition-all duration-300
-              ${isTopMovies ? "xl:ml-0 mt-4" : "rounded-full border border-[#646161]"}
+              ${isTopMovies ? "xl:ml-0 xl:mt-4" : "rounded-full border border-[#646161]"}
             `}
           >
             {/* Label */}
