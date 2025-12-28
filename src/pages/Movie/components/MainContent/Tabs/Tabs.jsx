@@ -2,9 +2,9 @@ import { useEffect, useState } from "react"
 import Tab from "./Tab"
 import ItemVersion from "./ItemVersion";
 import Cast from "./Cast";
+import Card from "../../../../../components/Cards/Card";
 import { getTrendingMovies } from "../../../../../services/movieService";
 import { mapTrendingMovie } from "../../../../../mappers/trendingMovieMapper";
-import Card from "../../../../../components/Card";
 
 function Tabs() {
   const [active, setActive] = useState("episodes");

@@ -17,3 +17,14 @@ export const getSliderMovies = async () => {
 
     return await Promise.all(detailPromises);
 }
+
+export const getAnimeList = () => 
+    fetchApi(`${TMDB_BASE_URL}/discover/movie?language=vi-VN&with_original_language=ja&page=1`);
+
+export const getAnimeSliderData = async () => {
+    const animeList = await getAnimeList();
+    const topAnime = animeList.results.slice(0, 15);
+    const detailPromises = topAnime.map(movie => getDetailsMovie(movie.id));
+    
+    return await Promise.all(detailPromises);
+}

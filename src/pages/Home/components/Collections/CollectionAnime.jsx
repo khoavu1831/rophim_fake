@@ -3,9 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation"
+import { useState } from "react"
+import TopSliderAnime from "../Slider/TopSliderAnime"
+import BottomSliderAnime from "../Slider/BottomSliderAnime"
 
-function Collection({ movies, titleCollection, variant, type }) {
-  const isVertical = variant === "vertical";
+function CollectionAnime({ movies, titleCollection, type }) {
+  const [active, setActive] = useState(false);
+  // const isVertical = variant === "vertical";
   const isTopMovies = type === "top-movies";
 
   return (
@@ -48,28 +52,18 @@ function Collection({ movies, titleCollection, variant, type }) {
               <i className="fa-solid fa-angle-right"></i>
             </a>
           </div>
-
         </div>
 
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={10}
-          slidesPerView={isVertical ? 3 : 2}
-          breakpoints={{
-            768: { slidesPerView: isVertical ? 4 : 2 },
-            1024: { slidesPerView: isVertical ? 5 : 3 },
-            1440: { slidesPerView: isVertical ? 8 : 3 }
-          }}
-        >
-          {movies.map((m) => (
-            <SwiperSlide key={m.id}>
-              <Card movie={m} variant={variant} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {/* Card Anime */}
+        <div className="w-full sm:relative xl:mb-12">
+          <div className="lg:h-115 h-110 flex flex-col bg-[#191b24] rounded-3xl overflow-hidden">
+            <TopSliderAnime movies={movies} active={active} setActive={setActive} />
+            <BottomSliderAnime movies={movies} active={active} setActive={setActive} />
+          </div>
+        </div>
       </div>
     </>
   )
 }
 
-export default Collection
+export default CollectionAnime
