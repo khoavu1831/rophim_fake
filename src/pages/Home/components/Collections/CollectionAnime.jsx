@@ -8,7 +8,7 @@ import TopSliderAnime from "../Slider/TopSliderAnime"
 import BottomSliderAnime from "../Slider/BottomSliderAnime"
 
 function CollectionAnime({ movies, titleCollection, type }) {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(0);
   // const isVertical = variant === "vertical";
   const isTopMovies = type === "top-movies";
 
@@ -22,7 +22,7 @@ function CollectionAnime({ movies, titleCollection, type }) {
             : "items-center max-sm:justify-between mb-4"}`}>
 
           {/* Title */}
-          <div className="text-[22px] sm:text-[25px] font-medium text-white max-w-[86%]">
+          <div className="text-[22px] sm:text-[25px] xl:text-[32px] font-medium text-white max-w-[86%]">
             {titleCollection}
           </div>
 

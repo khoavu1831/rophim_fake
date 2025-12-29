@@ -18,7 +18,7 @@ function Collection({ movies, titleCollection, variant, type }) {
             : "items-center max-sm:justify-between mb-4"}`}>
 
           {/* Title */}
-          <div className="text-[22px] sm:text-[25px] font-medium text-white max-w-[86%]">
+          <div className="text-[22px] sm:text-[25px] xl:text-[32px] font-medium text-white max-w-[86%]">
             {titleCollection}
           </div>
 

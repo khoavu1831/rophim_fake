@@ -51,8 +51,7 @@ function Card({ movie, variant }) {
           </Link>
 
           {/* Content */}
-          <div className={`content flex flex-col text-white pt-4 ${isVertical ? "text-center" : "max-md:text-center"}`}
-          >
+          <div className={`content flex flex-col text-white pt-4 ${isVertical ? "text-center" : "max-md:text-center"}`}>
             <h4 className="text-[13px] truncate">{movie.title}</h4>
             <h4 className="text-[13px] text-gray-400 truncate">{movie.subTitle}</h4>
           </div>

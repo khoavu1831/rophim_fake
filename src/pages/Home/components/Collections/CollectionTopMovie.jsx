@@ -4,8 +4,7 @@ import { Navigation } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation"
 
-function CollectionTopMovie({ movies, titleCollection, variant, type }) {
-  const isVertical = variant === "vertical";
+function CollectionTopMovie({ movies, titleCollection, type }) {
   const isTopMovies = type === "top-movies";
 
   return (
@@ -18,7 +17,7 @@ function CollectionTopMovie({ movies, titleCollection, variant, type }) {
             : "items-center max-sm:justify-between mb-4"}`}>
 
           {/* Title */}
-          <div className="text-[22px] sm:text-[25px] font-medium text-white max-w-[86%]">
+          <div className="text-[22px] sm:text-[25px] xl:text-[32px] font-medium text-white max-w-[86%]">
             {titleCollection}
           </div>
         </div>
@@ -26,27 +25,30 @@ function CollectionTopMovie({ movies, titleCollection, variant, type }) {
         <Swiper
           modules={[Navigation]}
           spaceBetween={0}
-          slidesPerView={isVertical ? 1 : 1}
+          slidesPerView={1}
           breakpoints={{
             425: {
-              slidesPerView: isVertical ? 2 : 1,
+              slidesPerView: 2,
               spaceBetween: 10
             },
             768:
             {
-              slidesPerView: isVertical ? 3 : 1,
+              slidesPerView: 3,
               spaceBetween: 10
             },
             1024: {
-              slidesPerView: isVertical ? 4 : 1,
+              slidesPerView: 4,
               spaceBetween: 10
             },
-            1440: { slidesPerView: isVertical ? 5 : 1 }
+            1440: {
+              slidesPerView: 5,
+              spaceBetween: 10
+            }
           }}
         >
           {movies.map((m, index) => (
             <SwiperSlide key={m.id}>
-              <CardTop movie={m} variant={variant} index={index} />
+              <CardTop movie={m} index={index} />
             </SwiperSlide>
           ))}
         </Swiper>

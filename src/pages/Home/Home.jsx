@@ -3,12 +3,13 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header/Header";
 import MainContent from "./components/MainContent";
 import Slider from "./components/Slider/Slider";
-import { getAnimeSliderData, getSliderMovies, getTrendingMovies } from "../../services/movieService";
+import { getAnimeSliderData, getSliderMovies, getTopMovies, getTrendingMovies } from "../../services/movieService";
 import { mapTrendingMovie } from "../../mappers/trendingMovieMapper";
 import { mapSliderMovie } from "../../mappers/sliderMovieMapper";
 
 function Home() {
   const [movies, setMovies] = useState([]);
+  const [topMovies, setTopMovies] = useState([]);
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [animeMovies, setAnimeMovies] = useState([]);
 
@@ -19,12 +20,17 @@ function Home() {
     });
 
     getSliderMovies().then(data => {
-      const mapped = data.map(mapSliderMovie)
+      const mapped = data.map(mapSliderMovie);
       setMovies(mapped);
     });
 
+    getTopMovies().then(data => {
+      const mapped = data.map(mapSliderMovie);
+      setTopMovies(mapped);
+    });
+
     getAnimeSliderData().then(data => {
-      const mapped = data.map(mapSliderMovie)
+      const mapped = data.map(mapSliderMovie);
       setAnimeMovies(mapped);
     })
   }, [])
@@ -33,7 +39,7 @@ function Home() {
     <div className="h-full bg-[#101117]">
       <Header />
       <Slider movies={movies} />
-      <MainContent movies={trendingMovies} animemovies={animeMovies} />
+      <MainContent movies={trendingMovies} animemovies={animeMovies} topmovies={topMovies}/>
       <Footer />
     </div>
   )

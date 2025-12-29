@@ -127,7 +127,7 @@ function TopSliderAnime({ movies, active, setActive }) {
 
                 {/* Description */}
                 <div className="w-full overflow-hidden max-sm:hidden">
-                  <p className="line-clamp-3 text-white text-[12px] md:text-[14px]">{m.description}</p>
+                  <p className="line-clamp-3 md:max-w-[60%] lg:max-w-[46%] text-white text-[12px] md:text-[14px]">{m.description}</p>
                 </div>
 
                 {/* Touches */}

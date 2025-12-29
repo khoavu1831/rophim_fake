@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import TopSliderAnime from "../../pages/Home/components/Slider/TopSliderAnime";
+import ModalCardTop from "./ModalCardTop";
 
-function CardTop({ movie, variant, index }) {
-  const isVertical = variant === "vertical";
+function CardTop({ movie, index }) {
   const isEven = index % 2 === 0;
 
   return (
@@ -11,28 +12,36 @@ function CardTop({ movie, variant, index }) {
         <div className="flex flex-col">
           {/* Image */}
           <Link to={"/movie"}>
-            <div className="cover-thumbnail relative">
-              {/* Checking variant type image */}
-              {isVertical ? (
-                <div className="cover-image aspect-2/3 rounded-xl">
-                  <div className={`${isEven ? "skew-y-6 origin-top-left" : "-skew-y-6 origin-bottom-right"} overflow-hidden rounded-xl`}>
-                    <img
-                      src={movie.imageUrl.vertical}
-                      className={`${isEven ? "-skew-y-6 origin-top-left" : "skew-y-6 origin-bottom-right"} h-full w-full object-cover rounded-xl`}
-                    />
-                  </div>
-                </div>
-              ) : (
-                <div className="cover-image aspect-2/1">
+
+            {/* Thumbnail */}
+            <div className="group relative">
+
+              {/* Cover image */}
+              <div className="aspect-2/3 rounded-xl">
+                <div className={`
+                  ${isEven ? "skew-y-6 origin-top-left" : "-skew-y-6 origin-bottom-right"} 
+                  overflow-hidden rounded-xl 
+                  transition-all duration-400
+                  group-hover:bg-mainblue
+                  `}>
                   <img
-                    src={movie.imageUrl.horizontal}
-                    className="h-full w-full object-cover rounded-xl"
+                    src={movie.avatar}
+                    className={`
+                      ${isEven ? "-skew-y-6 origin-top-left group-hover:skew-y-6" : "skew-y-6 origin-bottom-right group-hover:-skew-y-6"} 
+                      h-full w-full object-cover rounded-xl
+                      transition-all duration-400
+                      `}
                   />
                 </div>
-              )}
+
+                {/* Modal hover */}
+                <div className="hidden group-hover:block">
+                  <ModalCardTop m={movie} />
+                </div>
+              </div>
 
               {/* Subtitle & Dub */}
-              <div className={`container-sub text-white absolute text-[9px] sm:text-[12px] flex sm:w-full max-sm:flex-col gap-1 bottom-0 max-sm:pl-2 max-sm:pb-2 ${isVertical ? "justify-center" : "pl-5"}`}>
+              <div className={`container-sub text-white absolute text-[9px] sm:text-[12px] flex sm:w-full max-sm:flex-col gap-1 bottom-0 max-sm:pl-2 max-sm:pb-2 justify-center`}>
                 <span className="max-sm:p-[1px_8px] p-[3px_8px] rounded-xl sm:rounded bg-gray-500">
                   PĐ.
                   <strong>{movie.subtitle}</strong>
@@ -53,8 +62,8 @@ function CardTop({ movie, variant, index }) {
             </div>
           </Link>
 
-          {/* Content */}
-          <div className="content flex pt-4">
+          {/* Context */}
+          <div className="flex pt-4">
             <span className="
             text-[28px] pr-2 -mt-2 font-bold italic
             bg-linear-to-b from-white/70 to-mainblue bg-clip-text text-transparent"
