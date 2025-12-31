@@ -1,8 +1,19 @@
-function ModalCardTop({ m }) {
+function ModalCardTop({ m, index }) {
+  const isEven = index % 2 === 0;
+
   return (
     <>
       {/* Modal hover */}
-      <div className="absolute inset-0 z-100 w-100 rounded-2xl overflow-hidden">
+      <div className={`
+        absolute top-0 scale-10 opacity-0 group-hover:scale-100 group-hover:opacity-100 group-hover:w-100
+        ${isEven ?
+          "left-0 group-hover:left-[80%]" : "right-0 group-hover:right-[80%]"
+        }
+        transition-all duration-700 ease-out
+        z-9999
+        rounded-4xl overflow-hidden
+      `}
+      >
         {/* Wrapper */}
         <div className="flex flex-col h-full w-full">
 
@@ -13,7 +24,6 @@ function ModalCardTop({ m }) {
               className="h-full w-full object-cover  mask-b-from-90"
             />
 
-            {/* Overlay — giống hiệu ứng bạn đưa */}
             <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-[#2b3561] via-[#2b3561]/30 to-transparent" />
 
             {/* Grid noise */}

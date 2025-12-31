@@ -29,14 +29,14 @@ function CardTop({ movie, index }) {
                     className={`
                       ${isEven ? "-skew-y-6 origin-top-left group-hover:skew-y-6" : "skew-y-6 origin-bottom-right group-hover:-skew-y-6"} 
                       h-full w-full object-cover rounded-xl
-                      transition-all duration-400
+                      transition-all duration-400 group-hover:blur-[2px]
                       `}
                   />
                 </div>
 
                 {/* Modal hover */}
-                <div className="hidden group-hover:block">
-                  <ModalCardTop m={movie} />
+                <div className="modal">
+                  <ModalCardTop m={movie} index={index} />
                 </div>
               </div>
 
