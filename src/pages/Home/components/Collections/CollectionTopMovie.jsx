@@ -45,6 +45,7 @@ function CollectionTopMovie({ movies, titleCollection, type }) {
               spaceBetween: 10
             }
           }}
+          className="pb-40! -mb-40!"
         >
           {movies.map((m, index) => (
             <SwiperSlide key={m.id}>

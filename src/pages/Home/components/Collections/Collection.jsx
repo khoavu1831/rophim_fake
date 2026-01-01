@@ -60,6 +60,7 @@ function Collection({ movies, titleCollection, variant, type }) {
             1024: { slidesPerView: isVertical ? 5 : 3 },
             1440: { slidesPerView: isVertical ? 8 : 3 }
           }}
+          className="py-40! -my-40!"
         >
           {movies.map((m) => (
             <SwiperSlide key={m.id}>

@@ -3,18 +3,18 @@ import Tab from "./Tab"
 import ItemVersion from "./ItemVersion";
 import Cast from "./Cast";
 import Card from "../../../../../components/Cards/Card";
-import { getTrendingMovies } from "../../../../../services/movieService";
-import { mapTrendingMovie } from "../../../../../mappers/trendingMovieMapper";
+import { getTopMovies } from "../../../../../services/movieService";
+import { mapSliderMovie } from "../../../../../mappers/sliderMovieMapper";
 
 function Tabs() {
   const [active, setActive] = useState("episodes");
-  const [trendingMovies, setTrendingMovies] = useState([]);
+  const [topMovies, setTopMovies] = useState([]);
 
   useEffect(() => {
-    getTrendingMovies().then(data => {
-      const mapped = data.results.map(mapTrendingMovie);
-      setTrendingMovies(mapped);
-    })
+    getTopMovies().then(data => {
+      const mapped = data.map(mapSliderMovie);
+      setTopMovies(mapped);
+    });
   }, []);
 
 
@@ -76,7 +76,7 @@ function Tabs() {
 
           {/* Content*/}
           <div className="grid gap-4 grid-cols-2 sm:grid-cols-4 lg:grid-cols-5">
-            {trendingMovies.slice(0, 12).map((m) => (
+            {topMovies.slice(0, 12).map((m) => (
               <Card key={m.id} movie={m} variant={"vertical"} />
             ))}
           </div>

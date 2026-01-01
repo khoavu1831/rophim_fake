@@ -54,7 +54,7 @@ function TopSlider({ movies, active, setActive }) {
     >
       <div className="h-full">
         {
-          movies.map((m, i) => (
+          movies.slice(0, 6).map((m, i) => (
             <div
               key={m.id}
               className={`absolute inset-0 transition-opacity duration-700 ${i === active ? "opacity-100" : "opacity-0 z-0"}`}>

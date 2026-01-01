@@ -1,4 +1,4 @@
-function ModalCardTop({ m }) {
+function ModalCard({ m, isVertical }) {
   return (
     <>
       {/* Wrapper */}
@@ -39,30 +39,28 @@ function ModalCardTop({ m }) {
           </div>
 
           {/* PlaysBar */}
-          <div className="flex w-full gap-2 text-white text-[11px] py-2">
+          <div className={`flex ${isVertical ? "flex-wrap xl:flex-col" : ""}  w-full gap-2 text-white text-[11px] py-2`}>
 
-            <div className="flex-2 flex items-center justify-center py-3 gap-1 bg-mainblue text-black rounded">
+            <div className="flex-1 flex items-center justify-center py-3 gap-1 bg-mainblue text-black rounded cursor-pointer">
               <i className="fa-solid fa-play"></i>
               <span className="whitespace-nowrap">Xem ngay</span>
             </div>
 
-            <div className="flex-1 flex items-center justify-center gap-1 px-2 border border-gray-500 rounded">
-              <i className="fa-solid fa-heart"></i>
-              <span className="whitespace-nowrap">Thích</span>
-            </div>
+            <div className="flex flex-1 gap-2">
+              <div className="flex-1 flex items-center justify-center gap-1 py-2 px-2 border border-gray-500 rounded cursor-pointer">
+                <i className="fa-solid fa-heart"></i>
+                <span className="whitespace-nowrap">Thích</span>
+              </div>
 
-            <div className="flex-1 flex items-center justify-center gap-1 px-2 border border-gray-500 rounded">
-              <i className="fa-solid fa-circle-info"></i>
-              <span className="whitespace-nowrap">Chi tiết</span>
+              <div className="flex-1 flex items-center justify-center gap-1 py-2 px-2 border border-gray-500 rounded cursor-pointer">
+                <i className="fa-solid fa-circle-info"></i>
+                <span className="whitespace-nowrap">Chi tiết</span>
+              </div>
             </div>
-
           </div>
 
-
-
-
           {/* Tags */}
-          <div className="flex text-[8px] xl:text-[10px] gap-1.5 text-white py-2 items-center">
+          <div className="flex flex-wrap text-[8px] xl:text-[10px] gap-1.5 text-white py-2 items-center whitespace-nowrap">
             <div className="border rounded-md px-1 py-1 xl:px-1.5 xl:py-1.5 font-bold">
               <span className="text-mainblue text-[11px]">IMDb</span>
               <span>{m.info.imdb ?? "--"}</span>
@@ -102,4 +100,4 @@ function ModalCardTop({ m }) {
   )
 }
 
-export default ModalCardTop
+export default ModalCard

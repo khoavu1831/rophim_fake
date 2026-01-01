@@ -3,16 +3,16 @@ import CollectionTopMovie from "./CollectionTopMovie"
 import { titleCollections } from "../../../../utils/seed"
 import CollectionAnime from "./CollectionAnime"
 
-function Collections({ movies, animemovies, topmovies }) {
+function Collections({ animes, movies }) {
   return (
     <div className="collection gap-6 md:gap-12 flex flex-col">
       <Collection movies={movies} titleCollection={titleCollections[0]} variant={"vertical"} />
-      <CollectionAnime movies={animemovies} titleCollection={"Kho tàng Anime mới nhất"} variant={"vertical"} />
+      <CollectionAnime movies={animes} titleCollection={"Kho tàng Anime mới nhất"} variant={"vertical"} />
       <Collection movies={movies} titleCollection={titleCollections[1]} variant={"vertical"} />
       <Collection movies={movies} titleCollection={titleCollections[2]} variant={"horizontal"} />
-      <CollectionTopMovie movies={topmovies} titleCollection={"Top 10 phim bộ hôm nay"}/>
+      <CollectionTopMovie movies={movies} titleCollection={"Top 10 phim bộ hôm nay"}/>
       <Collection movies={movies} titleCollection={titleCollections[3]} variant={"vertical"} />
-      <CollectionTopMovie movies={topmovies} titleCollection={"Top 10 phim lẻ hôm nay"}/>
+      <CollectionTopMovie movies={movies} titleCollection={"Top 10 phim lẻ hôm nay"}/>
       <Collection movies={movies} titleCollection={titleCollections[4]} variant={"horizontal"} />
     </div>
   )

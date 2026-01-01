@@ -2,7 +2,7 @@ import Collections from "./Collections/Collections"
 import Ranking from "./Ranking/Ranking"
 import TopMovies from "./TopMovies"
 
-function MainContent({ movies, animemovies, topmovies }) {
+function MainContent({ animes, movies }) {
   return (
     <>
       <div className="bg-[#1b1d29] h-full max-sm:pb-20 md:pb-24 lg:pb-40 gap-4 flex flex-col">
@@ -18,7 +18,7 @@ function MainContent({ movies, animemovies, topmovies }) {
 
         {/* Collections */}
         <div className="collections">
-          <Collections movies={movies} animemovies={animemovies} topmovies={topmovies}/>
+          <Collections movies={movies} animes={animes}/>
         </div>
       </div>
     </>

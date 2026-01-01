@@ -7,9 +7,6 @@ export const getPopularMovies = () =>
 export const getDetailsMovie = (id) =>
     fetchApi(`${TMDB_BASE_URL}/movie/${id}?language=vi-VN`);
 
-export const getTrendingMovies = () =>
-    fetchApi(`${TMDB_BASE_URL}/trending/movie/day?language=vi-VN`);
-
 export const getSliderMovies = async () => {
     const popularMovies = await getPopularMovies();
     const topMovies = popularMovies.results.slice(0, 6);

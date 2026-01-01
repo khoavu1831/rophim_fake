@@ -13,7 +13,7 @@ function CardTop({ movie, index }) {
           {/* Image */}
 
           {/* Thumbnail */}
-          <div className="group relative">
+          <div className="group relative w-full">
 
             {/* Cover image */}
             <div className="aspect-2/3 rounded-xl">
@@ -22,7 +22,8 @@ function CardTop({ movie, index }) {
                   overflow-hidden rounded-xl 
                   transition-all duration-400
                   group-hover:bg-mainblue
-                  `}>
+                  `}
+              >
                 <Link to={"/movie"}>
                   <img
                     src={movie.avatar}
@@ -38,8 +39,11 @@ function CardTop({ movie, index }) {
               {/* Modal hover */}
               <div
                 className={`
-                  absolute top-0
+                  absolute top-10 w-full
                   pointer-events-none
+                  opacity-0 z-9999
+                  group-hover:opacity-100
+                  rounded-2xl overflow-hidden
                   ${isEven
                     ? "left-0 group-hover:animate-modal-right"
                     : "right-0 group-hover:animate-modal-left"
