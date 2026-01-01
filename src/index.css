@@ -4,4 +4,42 @@
 @theme {
     --font-poppins: "Poppins", "san-serif";
     --color-mainblue: #5f9beb;
+
+    /* KEYFRAMES */
+    @keyframes modal-right {
+        0% {
+            transform: translateX(0);
+            opacity: 0
+        }
+
+        50% {
+            transform: translate(24rem, 10rem);
+            opacity: 0.8
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1
+        }
+    }
+
+    @keyframes modal-left {
+        0% {
+            transform: translateX(0);
+            opacity: 0
+        }
+
+        50% {
+            transform: translate(-24rem, 10rem);
+            opacity: 0.8
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1
+        }
+    }
+
+    --animate-modal-right: modal-right 1s ease-in-out;
+    --animate-modal-left: modal-left 1s ease-in-out;
 }

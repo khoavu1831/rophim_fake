@@ -6,7 +6,7 @@ function Ranking() {
   return (
     <>
       <div className="container-ranking w-full">
-        <div className="m-4 border rounded-2xl border-gray-700">
+        <div className="m-4 border rounded-2xl border-gray-700 overflow-hidden">
           {/* Comment top - xl*/}
           <SliderTopComment />
 
