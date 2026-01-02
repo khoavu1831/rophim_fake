@@ -13,8 +13,11 @@ export const mapSliderMovie = (m) => {
       year: m.release_date.slice(0, 4) ?? "--",
       resolution: "HD",
       ageLimit: m.adult ? "18+" : "<18",
-      duration: `${m.runtime % 2}h ${(m.runtime / 2).toFixed(0)}m` ,
-      genres: m.genres
+      duration: `${m.runtime % 2}h ${(m.runtime / 2).toFixed(0)}m`,
+      genres: m.genres?.map(g => ({
+        ...g,
+        name: g.name.replace(/^Phim\s*/i, "")
+      })) ?? []
     }
   }
 }

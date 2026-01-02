@@ -52,7 +52,18 @@
         }
     }
 
+    @keyframes modal-fadein {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
     --animate-modal-right: modal-right 1s ease-in-out;
     --animate-modal-left: modal-left 1s ease-in-out;
     --animate-modal-up: modal-up 1s ease-in-out;
+    --animate-modal-fadein: modal-fadein 1s ease-in-out;
 }

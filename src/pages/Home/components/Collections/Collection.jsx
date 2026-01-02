@@ -10,15 +10,16 @@ function Collection({ movies, titleCollection, variant, type }) {
 
   return (
     <>
-      <div className={`px-4 ${isTopMovies && "xl:flex"}`}>
+      <div className={`px-4 ${isTopMovies && "xl:flex xl:items-start xl:gap-8"}`}>
         {/* Thumbnail */}
         <div className={`flex w-full 
           ${isTopMovies
             ? "xl:pb-13.75 max-xl:items-center max-xl:justify-between xl:flex-col xl:justify-end max-xl:mb-4"
-            : "items-center max-sm:justify-between mb-4"}`}>
+            : "items-center max-sm:justify-between mb-4"}`}
+        >
 
           {/* Title */}
-          <div className="text-[22px] sm:text-[25px] xl:text-[32px] font-medium text-white max-w-[86%]">
+          <div className="text-[22px] sm:text-[25px] xl:text-[32px] font-medium text-white">
             {titleCollection}
           </div>
 
@@ -58,13 +59,13 @@ function Collection({ movies, titleCollection, variant, type }) {
           breakpoints={{
             768: { slidesPerView: isVertical ? 4 : 2 },
             1024: { slidesPerView: isVertical ? 5 : 3 },
-            1440: { slidesPerView: isVertical ? 8 : 3 }
+            1440: { slidesPerView: isVertical ? 8 : 5 }
           }}
-          className="py-40! -my-40!"
+          className="pb-40! -mb-40!"
         >
           {movies.map((m) => (
             <SwiperSlide key={m.id}>
-              <Card movie={m} variant={variant} />
+              <Card movie={m} variant={variant} type={type}/>
             </SwiperSlide>
           ))}
         </Swiper>
