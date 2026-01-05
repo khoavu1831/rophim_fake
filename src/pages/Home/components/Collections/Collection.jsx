@@ -57,7 +57,7 @@ function Collection({ movies, titleCollection, variant, type }) {
         </div>
 
         {/* Slide nav */}
-        <div className={!isTopMovies && ("max-xl:hidden relative text-white text-4xl")}>
+        <div className={`${isTopMovies ? "hidden" : "max-xl:hidden relative text-white text-4xl"}`}>
           <button
             ref={preRef}
             className={`absolute cursor-pointer z-50 -left-10

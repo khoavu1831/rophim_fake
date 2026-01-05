@@ -20,12 +20,6 @@ function SliderNewComment() {
           <SwiperSlide><CommentItem /></SwiperSlide>
           <SwiperSlide><CommentItem /></SwiperSlide>
           <SwiperSlide><CommentItem /></SwiperSlide>
-          <SwiperSlide><CommentItem /></SwiperSlide>
-          <SwiperSlide><CommentItem /></SwiperSlide>
-          <SwiperSlide><CommentItem /></SwiperSlide>
-          <SwiperSlide><CommentItem /></SwiperSlide>
-          <SwiperSlide><CommentItem /></SwiperSlide>
-          <SwiperSlide><CommentItem /></SwiperSlide>
         </Swiper>
       </div>
     </>

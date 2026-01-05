@@ -11,11 +11,11 @@ function Ranking({ movies }) {
           <SliderTopComment />
 
           <div
-            className="grid grid-flow-col
-              lg:grid-rows-2 xl:grid-flow-col
+            className="grid max-xl:grid-flow-col
+              lg:grid-rows-2 xl:grid-rows-1 xl:grid-cols-4
               max-sm:auto-cols-[100%] md:auto-cols-[80%] lg:auto-cols-[50%]
-              overflow-x-auto xl:overflow-visible
-              md:divide-x xl:divide-y divide-gray-700"
+              overflow-x-auto 
+              md:divide-x divide-gray-700"
           >
             {/* Hotest movies - sm -> xl*/}
             <TypeRank context={"SÔi nổi nhất"} icon={"fa-fire"} movies={movies} />
