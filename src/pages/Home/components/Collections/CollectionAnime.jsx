@@ -56,7 +56,7 @@ function CollectionAnime({ movies, titleCollection, type }) {
 
         {/* Card Anime */}
         <div className="w-full sm:relative xl:mb-12">
-          <div className="lg:h-115 h-110 flex flex-col bg-[#191b24] rounded-3xl overflow-hidden">
+          <div className="lg:h-115 xl:h-140 h-110 flex flex-col bg-[#191b24] rounded-3xl overflow-hidden">
             <TopSliderAnime movies={movies} active={active} setActive={setActive} />
             <BottomSliderAnime movies={movies} active={active} setActive={setActive} />
           </div>

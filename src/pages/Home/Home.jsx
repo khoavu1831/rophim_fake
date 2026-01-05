@@ -23,7 +23,7 @@ function Home() {
   }, [])
 
   return (
-    <div className="h-full bg-[#101117]">
+    <div className="h-full bg-[#1b1d29] xl:px-6">
       <Header />
       <Slider movies={movies} />
       <MainContent animes={animes} movies={movies}/>

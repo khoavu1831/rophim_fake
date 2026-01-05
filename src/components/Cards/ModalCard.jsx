@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function ModalCard({ m, isVertical, isTopMovies }) {
   return (
     <>
@@ -50,16 +52,16 @@ function ModalCard({ m, isVertical, isTopMovies }) {
 
             <div className="flex-1 flex items-center justify-center py-3 gap-1 bg-mainblue text-black rounded cursor-pointer">
               <i className="fa-solid fa-play"></i>
-              <span className="whitespace-nowrap">Xem ngay</span>
+              <Link to={"/movie"} className="whitespace-nowrap">Xem ngay</Link>
             </div>
 
             <div className="flex flex-1 gap-2">
-              <div className="flex-1 flex items-center justify-center gap-1 py-2 px-2 border border-gray-500 rounded cursor-pointer">
+              <div className={`flex-1 flex items-center justify-center gap-1 py-2 px-2 border border-gray-500 rounded cursor-pointer ${isTopMovies ? "bg-[#101117]" : ""}`}>
                 <i className="fa-solid fa-heart"></i>
                 <span className="whitespace-nowrap">Thích</span>
               </div>
 
-              <div className="flex-1 flex items-center justify-center gap-1 py-2 px-2 border border-gray-500 rounded cursor-pointer">
+              <div className={`flex-1 flex items-center justify-center gap-1 py-2 px-2 border border-gray-500 rounded cursor-pointer ${isTopMovies ? "bg-[#101117]" : ""}`}>
                 <i className="fa-solid fa-circle-info"></i>
                 <span className="whitespace-nowrap">Chi tiết</span>
               </div>

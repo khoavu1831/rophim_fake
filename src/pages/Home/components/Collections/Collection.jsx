@@ -3,10 +3,15 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation"
+import { useRef, useState } from "react"
 
 function Collection({ movies, titleCollection, variant, type }) {
   const isVertical = variant === "vertical";
   const isTopMovies = type === "top-movies";
+  const preRef = useRef(null);
+  const nextRef = useRef(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false)
 
   return (
     <>
@@ -49,11 +54,50 @@ function Collection({ movies, titleCollection, variant, type }) {
               <i className="fa-solid fa-angle-right"></i>
             </a>
           </div>
-
         </div>
+
+        {/* Slide nav */}
+        <div className={!isTopMovies && ("max-xl:hidden relative text-white text-4xl")}>
+          <button
+            ref={preRef}
+            className={`absolute cursor-pointer z-50 -left-10
+              ${isBeginning ? "opacity-0 pointer-events-none" : "opacity-40 hover:opacity-100"}
+              ${isVertical ? "top-38" : "top-20"}`}
+          >
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <button
+            ref={nextRef}
+            className={`absolute cursor-pointer z-50 -right-10
+              ${isEnd ? "opacity-0 pointer-events-none" : "opacity-40 hover:opacity-100"}
+              ${isVertical ? "top-38" : "top-20"}`}
+          >
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
 
         <Swiper
           modules={[Navigation]}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = preRef.current,
+              swiper.params.navigation.nextEl = nextRef.current
+          }}
+          onSwiper={(swiper) => {
+            requestAnimationFrame(() => {
+              setIsBeginning(swiper.isBeginning)
+              setIsEnd(swiper.isEnd)
+            })
+          }}
+          onSlideChange={(swiper) => {
+            setIsBeginning(swiper.isBeginning)
+            setIsEnd(swiper.isEnd)
+          }}
+          onResize={(swiper) => {
+            setIsBeginning(swiper.isBeginning)
+            setIsEnd(swiper.isEnd)
+          }}
           spaceBetween={10}
           slidesPerView={isVertical ? 3 : 2}
           breakpoints={{
@@ -61,15 +105,16 @@ function Collection({ movies, titleCollection, variant, type }) {
             1024: { slidesPerView: isVertical ? 5 : 3 },
             1440: { slidesPerView: isVertical ? 8 : 5 }
           }}
-          className="pb-40! -mb-40!"
+          className="pb-40! -mb-40! z-999"
         >
+
           {movies.map((m) => (
             <SwiperSlide key={m.id}>
-              <Card movie={m} variant={variant} type={type}/>
+              <Card movie={m} variant={variant} type={type} />
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </div >
     </>
   )
 }

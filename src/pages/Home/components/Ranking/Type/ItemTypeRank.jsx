@@ -1,11 +1,14 @@
-function ItemTypeRank({ data, index, isModal }) {
+import { Link } from "react-router-dom";
+
+function ItemTypeRank({ states, index, isModal, movie }) {
   let icon = "";
   let color = "";
-
-  if (data.state === "minus") {
+  let state = states[index];
+  
+  if (state === "minus") {
     icon = "fa-minus"
     color = "text-gray-700"
-  } else if (data.state === "up") {
+  } else if (state === "up") {
     icon = "fa-arrow-trend-up"
     color = "text-green-400"
   } else {
@@ -29,19 +32,18 @@ function ItemTypeRank({ data, index, isModal }) {
           <div className={`cover-img shrink-0 ${isModal ? "h-14 w-10" : "h-8 w-7"} mb-2`}>
             <img
               className="w-full h-full object-cover"
-              src="https://static.nutscdn.com/vimg/300-0/c04eb2651bacb46cc0642c503ee7be2e.jpg" 
-              alt=""
+              src={movie.poster}
             />
           </div>
 
           {/* Name movie */}
           <div className="line-clamp-1 max-sm:line-clamp-2 text-[14px]">
-            <a
+            <Link
               className="hover:text-mainblue"
-              href=""
+              to={"/movie"}          
             >
-              Song Quỹ
-            </a>
+              {movie.title}
+            </Link>
           </div>
         </div>
       </div>

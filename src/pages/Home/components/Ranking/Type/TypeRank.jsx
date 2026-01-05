@@ -2,10 +2,10 @@ import { useState } from "react"
 import HeaderTypeRank from "../HeaderTypeRank"
 import ItemTypeRank from "./ItemTypeRank"
 
-function TypeRank({ context, icon }) {
-  const exList = [
-    { state: "up" }, { state: "down" }, { state: "up" }, { state: "minus" }, { state: "up" },
-    { state: "up" }, { state: "down" }, { state: "up" }, { state: "minus" }, { state: "up" }
+function TypeRank({ context, icon, movies }) {
+  const states = [
+    "up", "down", "up", "minus", "up",
+    "up", "down", "up", "minus", "up"
   ]
   const [toggle, setToggle] = useState(false);
 
@@ -13,10 +13,11 @@ function TypeRank({ context, icon }) {
     <>
       <div className="flex flex-col px-6 text-white">
         <HeaderTypeRank context={context} icon={icon} />
+
         {/* MAX 5 items */}
         <div className="flex flex-col gap-3">
-          {exList.slice(0, 5).map((m, i) => (
-            <ItemTypeRank key={i} data={m} index={i + 1} />
+          {movies.slice(0, 5).map((movie, index) => (
+            <ItemTypeRank key={movie.id} states={states} index={index + 1} movie={movie} />
           ))}
         </div>
 
@@ -49,9 +50,9 @@ function TypeRank({ context, icon }) {
 
               {/* MAX 5 items */}
               <div className="grid divide-y divide-gray-700 gap-6 pr-40 max-sm:pr-10">
-                {exList.map((m, i) => (
-                  <div key={i} className="text-[15px]">
-                    <ItemTypeRank data={m} index={i + 1} isModal={toggle} />
+                {movies.slice(0, 10).map((movie, index) => (
+                  <div key={movie.id} className="text-[15px]">
+                    <ItemTypeRank states={states} index={index + 1} isModal={toggle} movie={movie} />
                   </div>
                 ))}
               </div>

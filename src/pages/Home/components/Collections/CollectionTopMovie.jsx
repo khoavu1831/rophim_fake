@@ -3,9 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation"
+import { useState, useRef } from "react"
 
 function CollectionTopMovie({ movies, titleCollection, type }) {
   const isTopMovies = type === "top-movies";
+  const preRef = useRef(null);
+  const nextRef = useRef(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false)
 
   return (
     <>
@@ -22,8 +27,45 @@ function CollectionTopMovie({ movies, titleCollection, type }) {
           </div>
         </div>
 
+        {/* Slide nav */}
+        <div className="max-md:hidden relative text-white text-4xl">
+          <button
+            ref={preRef}
+            className={`absolute cursor-pointer z-50 xl:-left-10 top-66
+              ${isBeginning ? "opacity-0 pointer-events-none" : "opacity-40 hover:opacity-100"}`}
+          >
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <button
+            ref={nextRef}
+            className={`absolute cursor-pointer z-50 xl:-right-10 top-66
+              ${isEnd ? "opacity-0 pointer-events-none" : "opacity-40 hover:opacity-100"}`}
+          >
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
         <Swiper
           modules={[Navigation]}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = preRef.current,
+              swiper.params.navigation.nextEl = nextRef.current
+          }}
+          onSwiper={(swiper) => {
+            requestAnimationFrame(() => {
+              setIsBeginning(swiper.isBeginning)
+              setIsEnd(swiper.isEnd)
+            })
+          }}
+          onSlideChange={(swiper) => {
+            setIsBeginning(swiper.isBeginning)
+            setIsEnd(swiper.isEnd)
+          }}
+          onResize={(swiper) => {
+            setIsBeginning(swiper.isBeginning)
+            setIsEnd(swiper.isEnd)
+          }}
           spaceBetween={0}
           slidesPerView={1}
           breakpoints={{

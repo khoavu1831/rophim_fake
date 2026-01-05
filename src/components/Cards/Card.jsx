@@ -15,10 +15,10 @@ function Card({ movie, variant, type }) {
           <div className="group relative">
             <Link
               to={"/movie"}
-              className={`relative ${isVertical ? "aspect-2/3" : "aspect-2/1"} `}>
+              className={`relative transistion duration-700 group-hover:blur-[2px] ${isVertical ? "aspect-2/3" : "aspect-2/1"} `}>
               <img
                 src={`${isVertical ? movie.avatar : movie.poster}`}
-                className="h-full w-full object-cover rounded-xl"
+                className={`h-full w-full object-cover rounded-xl ${isVertical ? "min-h-70.5" : ""}`}
               />
               {/* Subtitle & Dub */}
               <div

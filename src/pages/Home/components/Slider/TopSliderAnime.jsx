@@ -61,7 +61,7 @@ function TopSliderAnime({ movies, active, setActive }) {
             >
               <Link
                 to={"/movie"}
-                className="h-full xl:w-200 w-full"
+                className="h-full xl:w-300 w-full"
               >
                 <img
                   src={m.poster}
