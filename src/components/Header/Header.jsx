@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { labels } from "../../utils/seed";
 import NavItem from "./NavItem";
+import { Link } from "react-router-dom";
 
 function Header() {
   const headerRef = useRef(null);
@@ -53,7 +54,7 @@ function Header() {
 
   return (
     <>
-      <header className="max-sm:relative max-sm:bg-[#0f111a] fixed top-0 left-0 font-poppins w-full z-50">
+      <header className="max-sm:relative max-sm:bg-[#0f111a] fixed top-0 left-0 font-poppins w-full z-999">
         <nav
           ref={headerRef}
           className={`h-17.5 flex justify-between items-center w-auto px-5 ${isTop ? "bg-transparent xl:h-22.5 " : "bg-[#0f111a] xl:h-17.5"} xl:relative`}
@@ -67,13 +68,13 @@ function Header() {
 
 
             {/* Logo */}
-            <a className="cursor-pointer max-xl:ml-4" href="#">
-              <div className="flex items-center">
+            <div className="cursor-pointer max-xl:ml-4">
+              <Link to={"/home"} className="flex items-center">
                 <img className="h-13" src="movie.svg" alt="logo" />
                 <h3 className="font-semibold text-white text-[18px]">RoPhim</h3>
                 <span className="font-mono text-gray-400 text-[12px]">Fake</span>
-              </div>
-            </a>
+              </Link>
+            </div>
           </div>
 
           {/* SearchIcon <= 1280px */}

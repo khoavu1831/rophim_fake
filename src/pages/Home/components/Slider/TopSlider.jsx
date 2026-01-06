@@ -83,7 +83,7 @@ function TopSlider({ movies, active, setActive }) {
               ></div>
 
               {/* Content */}
-              <div className="absolute max-xl:bottom-0 bottom-20 flex flex-col max-sm:items-center sm:pl-8 sm:pb-8 w-full">
+              <div className="absolute max-xl:bottom-0 bottom-30 flex flex-col max-sm:items-center sm:pl-8 sm:pb-8 w-full">
 
                 {/* Title */}
                 <div className="max-w-full">
@@ -130,10 +130,12 @@ function TopSlider({ movies, active, setActive }) {
 
                 {/* Touches */}
                 <div className="max-sm:hidden flex items-center gap-6 mt-6">
+
                   {/* Play */}
                   <Link to={"/movie"} className="flex justify-center items-center rounded-full bg-mainblue h-15 w-15 lg:h-17.5 lg:w-17.5 lg:p-6 shadow-[0px_4px_10px_5px_rgba(0,149,182,0.4)]">
                     <i className="fa-solid fa-play text-black text-[18px] lg:text-[26px]"></i>
                   </Link>
+                  
                   {/* Like + Info */}
                   <div className="flex items-center text-white bg-transparent text-[18px] rounded-l-full rounded-r-full h-12 border">
                     <a href="" className="px-5 border-r h-full leading-12">

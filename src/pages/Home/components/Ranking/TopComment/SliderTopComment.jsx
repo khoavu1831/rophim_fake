@@ -23,6 +23,11 @@ function SliderTopComment() {
           <SwiperSlide><CardTopComment /></SwiperSlide>
           <SwiperSlide><CardTopComment /></SwiperSlide>
           <SwiperSlide><CardTopComment /></SwiperSlide>
+          <SwiperSlide><CardTopComment /></SwiperSlide>
+          <SwiperSlide><CardTopComment /></SwiperSlide>
+          <SwiperSlide><CardTopComment /></SwiperSlide>
+          <SwiperSlide><CardTopComment /></SwiperSlide>
+          <SwiperSlide><CardTopComment /></SwiperSlide>
         </Swiper>
       </div>
     </>

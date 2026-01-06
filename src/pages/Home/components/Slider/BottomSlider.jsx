@@ -1,6 +1,6 @@
 function BottomSlider({ movies, active, setActive }) {
   return (
-    <div className="sm:absolute right-[10%] top-[80%] lg:top-[86%] xl:right-17.5 pt-3 pb-3">
+    <div className="sm:absolute right-[10%] top-[80%] lg:top-[86%] xl:top-[70%] xl:right-17.5 pt-3 pb-3">
       <div className="flex justify-center gap-2">
         {movies.slice(0, 6).map((m, i) => (
           <button key={m.id} onClick={() => setActive(i)} className="p-1 cursor-pointer">

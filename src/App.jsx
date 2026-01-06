@@ -7,7 +7,7 @@ function App() {
     <>
       <BrowserRouter basename="/rophim_fake">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/movie" element={<Movie />} />
         </Routes>
       </BrowserRouter>
