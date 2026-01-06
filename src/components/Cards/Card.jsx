@@ -15,7 +15,7 @@ function Card({ movie, variant, type }) {
           <div className="group relative">
             <Link
               to={"/movie"}
-              className={`relative block transistion duration-700 group-hover:blur-[2px] ${isVertical ? "aspect-2/3" : "aspect-2/1"} `}>
+              className={`relative block transistion duration-700 lg:group-hover:blur-[2px] ${isVertical ? "aspect-2/3" : "aspect-2/1"} `}>
               <img
                 src={`${isVertical ? movie.avatar : movie.poster}`}
                 className="h-full w-full object-cover rounded-xl"
@@ -25,7 +25,7 @@ function Card({ movie, variant, type }) {
                 className={`
                   container-sub text-white absolute text-[9px] sm:text-[12px] flex sm:w-full max-sm:flex-col gap-1 bottom-0 max-sm:pl-2 max-sm:pb-2 
                   ${isVertical ? "justify-center" : "pl-5"}
-                  ${isTopMovies ? "group-hover:hidden" : ""}`
+                  ${isTopMovies ? "lg:group-hover:hidden" : ""}`
                 }
               >
                 <span className="max-sm:p-[1px_8px] p-[3px_8px] rounded-xl sm:rounded bg-gray-500">
@@ -50,12 +50,13 @@ function Card({ movie, variant, type }) {
             {/* Modal hover */}
             <div
               className={`
+                hidden lg:block
                 absolute w-full h-full
                 pointer-events-nones
                 opacity-0 z-9999
                 transition-opacity duration-1000 ease-in-out
                 group-hover:opacity-100
-                group-hover:animate-modal-fadein
+                lg:group-hover:animate-modal-fadein
                 rounded-xl overflow-hidden
                 left-0 top-0
               `}
