@@ -69,7 +69,7 @@ function Header() {
 
             {/* Logo */}
             <div className="cursor-pointer max-xl:ml-4">
-              <Link to={"/home"} className="flex items-center">
+              <Link to={"/"} className="flex items-center">
                 <img className="h-13" src="movie.svg" alt="logo" />
                 <h3 className="font-semibold text-white text-[18px]">RoPhim</h3>
                 <span className="font-mono text-gray-400 text-[12px]">Fake</span>
