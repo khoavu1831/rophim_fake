@@ -8,7 +8,7 @@ import { mapSliderMovie } from "../../../../../mappers/sliderMovieMapper";
 import { Link } from "react-router-dom";
 import ItemComment from "./ItemComment";
 
-function Tabs() {
+function Tabs({ isWatch }) {
   const [active, setActive] = useState("episodes");
   const [topMovies, setTopMovies] = useState([]);
   const [isPlayVideo, setIsPlayVideo] = useState(false);
@@ -35,7 +35,7 @@ function Tabs() {
 
   return (
     <>
-      <div className="tabs max-xl:bg-linear-0 from-gray-400/18 to-90% -mx-4 px-4 xl:px-10">
+      <div className={`${isWatch ? "hidden" : ""} tabs max-xl:bg-linear-0 from-gray-400/18 to-90% -mx-4 px-4 xl:px-10`}>
         <div className="flex justify-start max-xl:justify-center gap-6 text-[13px] text-white">
           <Tab id="episodes" active={active} setActive={setActive} />
           <Tab id="gallery" active={active} setActive={setActive} />

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "./pages/Home/Home"
 import Movie from "./pages/Movie/Movie"
+import WatchMovie from "./pages/WatchMovie/WatchMovie"
 function App() {
 
   return (
@@ -9,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie" element={<Movie />} />
+          <Route path="/watch" element={<WatchMovie />} />
         </Routes>
       </BrowserRouter>
     </>
