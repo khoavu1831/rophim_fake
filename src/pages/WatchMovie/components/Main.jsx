@@ -81,12 +81,12 @@ function Main() {
       <div className="px-4 xl:flex xl:divide-x divide-gray-400/50">
 
         {/* Tabs */}
-        <div className="p-8 w-full">
+        <div className="xl:p-8 w-full">
           <Tabs isWatch={true} />
         </div>
 
         {/* More */}
-        <div className="flex flex-col divide-y divide-gray-400/50 gap-4 p-8 min-w-100">
+        <div className="flex flex-col divide-y divide-gray-400/50 gap-4 xl:p-8 xl:min-w-100">
 
           {/* Rate */}
           <div className="flex justify-between items-center py-2">
