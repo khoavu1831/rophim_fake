@@ -139,10 +139,11 @@ function Header() {
               <NavItem label={"Rổ Bóng"} href={"/robong"} activeNav={activeNav} setActiveNav={setActiveNav} variant="desktop" />
             </div>
 
-            <button className="bg-white flex items-center rounded-3xl px-3 py-2.5 w-auto text-[13px] font-medium opacity-90 cursor-pointer hover:opacity-100">
+            {/* Button - test link: /watch */}
+            <Link to={"/watch"} className="bg-white flex items-center rounded-3xl px-3 py-2.5 w-auto text-[13px] font-medium opacity-90 cursor-pointer hover:opacity-100">
               <i className="fa-solid fa-user"></i>
               <h4 className="ml-1.5">Thành viên</h4>
-            </button>
+            </Link>
           </div>
         </nav>
 
@@ -153,10 +154,10 @@ function Header() {
             className="xl:hidden absolute top-full left-0 mt-1 w-full md:max-w-[320px] px-1.5 z-50"
           >
             <div className="bg-[#2b3561] rounded-[14px] flex flex-col py p-4">
-              <button className="bg-white flex justify-center items-center rounded-3xl px-3 text-[13px] font-medium opacity-90 cursor-pointer hover:opacity-100 w-full h-9.5 ">
+              <Link to={"/watch"} className="bg-white flex justify-center items-center rounded-3xl px-3 text-[13px] font-medium opacity-90 cursor-pointer hover:opacity-100 w-full h-9.5 ">
                 <i className="fa-solid fa-user"></i>
                 <h4 className="ml-1.5">Thành viên</h4>
-              </button>
+              </Link>
 
               <div className="grid grid-cols-2 mt-4">
                 <NavItem label={"Phim Lẻ"} href={"/phimle"} activeNav={activeNav} setActiveNav={setActiveNav} variant="mobile" />
