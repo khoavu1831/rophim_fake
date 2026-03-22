@@ -3,7 +3,7 @@ import Tab from "./Tab"
 import ItemVersion from "./ItemVersion";
 import Cast from "./Cast";
 import Card from "../../../../../components/Cards/Card";
-import { getTopMovies } from "../../../../../services/movieService";
+import { fetchTopTodayMovies } from "../../../../../services/movieService";
 import { mapSliderMovie } from "../../../../../mappers/sliderMovieMapper";
 import { Link } from "react-router-dom";
 import ItemComment from "./ItemComment";
@@ -26,8 +26,8 @@ function Tabs({ isWatch }) {
   };
 
   useEffect(() => {
-    getTopMovies().then(data => {
-      const mapped = data.map(mapSliderMovie);
+    fetchTopTodayMovies().then(data => {
+      const mapped = (data.results ?? []).map(mapSliderMovie);
       setTopMovies(mapped);
     });
   }, []);
