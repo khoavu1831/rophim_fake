@@ -13,7 +13,7 @@ function MainContent({ movie, loading }) {
 
           <div className="bg-[#1b1d29] xl:px-10 rounded-4xl">
             <PlaysBar movie={movie} />
-            <Tabs />
+            <Tabs movie={movie} />
           </div>
         </div>
       </div>

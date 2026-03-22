@@ -74,4 +74,4 @@ export const getHomeData = async () => {
 };
 
 export const getMovieDetails = (id) =>
-  fetchApi(`${TMDB_BASE_URL}/movie/${id}?language=vi-VN&append_to_response=credits`);
+  fetchApi(`${TMDB_BASE_URL}/movie/${id}?language=vi-VN&append_to_response=credits,videos,images`);
