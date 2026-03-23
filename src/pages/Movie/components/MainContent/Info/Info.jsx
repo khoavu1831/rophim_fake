@@ -34,7 +34,7 @@ function Info({ movie, loading }) {
   const year = movie.release_date?.slice(0, 4) ?? "--";
   const runtime = formatRuntime(movie.runtime);
   const genres = movie.genres ?? [];
-  const cast = movie.credits?.cast?.slice(0, 7) ?? [];
+  const cast = movie.credits?.cast?.slice(0, 9) ?? [];
   const productionCompanies = movie.production_companies?.map(c => c.name) ?? [];
   const countries = movie.production_countries?.map(c => c.name) ?? [];
   const directors = movie.credits?.crew?.filter(p => p.job === "Director").map(p => p.name) ?? [];

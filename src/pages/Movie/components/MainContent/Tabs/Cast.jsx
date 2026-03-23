@@ -22,7 +22,7 @@ function Cast({ person }) {
             <span>{person?.name ?? "--"}</span>
           </div>
 
-          <div className="w-full bg-[#1b1d29] text-center line-clamp-1 text-mainblue font-light text-[12px] px-2">
+          <div className="w-full text-center line-clamp-1 text-mainblue font-light text-[12px] px-2">
             <span>{person?.character ?? ""}</span>
           </div>
         </div>

@@ -7,8 +7,8 @@ const discover = (params) =>
 const trending = (params = "") =>
   fetchApi(`${TMDB_BASE_URL}/trending/movie/week?language=vi-VN&${params}`);
 
-export const fetchSliderMovies = () =>
-  trending();
+export const fetchSliderMovies = () => trending();
+export const fetchTopTodayMovies = () => trending("page=1");
 
 export const fetchAnimeSlider = () =>
   discover("with_original_language=ja&sort_by=popularity.desc&page=1");
@@ -24,9 +24,6 @@ export const fetchThaiMovies = () =>
 
 export const fetchCinemaMovies = () =>
   discover("with_release_type=3|2&sort_by=popularity.desc&page=1&vote_count.gte=100");
-
-export const fetchTopTodayMovies = () =>
-  trending("page=1");
 
 export const fetchThrillerMovies = () =>
   discover("with_genres=53&sort_by=popularity.desc&page=1");
