@@ -3,10 +3,13 @@ import Home from "./pages/Home/Home"
 import Movie from "./pages/Movie/Movie"
 import WatchMovie from "./pages/WatchMovie/WatchMovie"
 import Search from "./pages/Search/Search"
+import { Toaster } from "react-hot-toast"
+
 function App() {
 
   return (
     <>
+      <Toaster position="top-right" />
       <BrowserRouter basename="/cinepass">
         <Routes>
           <Route path="/" element={<Home />} />
