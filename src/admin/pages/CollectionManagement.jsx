@@ -6,11 +6,11 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 const CollectionManagement = () => {
   const [collections, setCollections] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+
   // Modal states
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingCollection, setEditingCollection] = useState(null);
-  
+
   // Form states
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -176,8 +176,8 @@ const CollectionManagement = () => {
           <h1 className="text-2xl font-bold text-white">Quản lý Collections</h1>
           <p className="text-gray-400 text-sm mt-1">Danh sách phim hiển thị ngoài trang chủ</p>
         </div>
-        
-        <button 
+
+        <button
           onClick={openCreateModal}
           className="bg-mainblue hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2"
         >
@@ -206,17 +206,20 @@ const CollectionManagement = () => {
                       {collection.type}
                     </span>
                   </div>
-                  {collection.description && <p className="text-sm text-gray-400 line-clamp-1">{collection.description}</p>}
+                  {collection.description !== ""
+                    ? <p className="text-sm text-mainblue/80 line-clamp-1">{collection.description}</p>
+                    : <p className="text-sm text-gray-400 line-clamp-1">Không có mô tả</p>
+                  }
                 </div>
                 <div className="flex gap-2">
-                  <button 
+                  <button
                     onClick={() => openEditModal(collection)}
                     className="w-8 h-8 rounded bg-blue-500/10 text-blue-400 hover:bg-blue-500 hover:text-white transition-colors flex items-center justify-center"
                     title="Chỉnh sửa"
                   >
                     <i className="fa-solid fa-pen-to-square"></i>
                   </button>
-                  <button 
+                  <button
                     onClick={() => handleDeleteCollection(collection.id)}
                     className="w-8 h-8 rounded bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white transition-colors flex items-center justify-center"
                     title="Xóa"
@@ -234,9 +237,9 @@ const CollectionManagement = () => {
                   <div className="flex gap-2 overflow-x-auto pb-2 custom-scrollbar">
                     {collection.movies.map(movie => (
                       <div key={movie.id} className="min-w-[80px] w-[80px] flex flex-col gap-1">
-                        <img 
-                          src={movie.posterUrl || `https://image.tmdb.org/t/p/w154${movie.posterPath}`} 
-                          alt={movie.title} 
+                        <img
+                          src={movie.posterUrl || `https://image.tmdb.org/t/p/w154${movie.posterPath}`}
+                          alt={movie.title}
                           className="w-full h-[120px] object-cover rounded bg-gray-800"
                           onError={(e) => e.target.src = '/movie.svg'}
                         />
@@ -256,27 +259,27 @@ const CollectionManagement = () => {
       {/* Collection Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-[#1b1d29] border border-[#2b3561] rounded-2xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl animate-scale-in overflow-hidden">
+          <div className="bg-[#1b1d29] border border-[#2b3561] rounded-2xl w-full max-w-5xl h-[90vh] flex flex-col shadow-2xl animate-scale-in overflow-hidden">
             <div className="flex items-center justify-between p-5 border-b border-[#2b3561]">
               <h2 className="text-xl font-bold text-white">
                 {editingCollection ? `Chỉnh sửa Collection: ${editingCollection.title}` : "Tạo Collection mới"}
               </h2>
-              <button 
+              <button
                 onClick={() => setIsModalOpen(false)}
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <i className="fa-solid fa-xmark text-xl"></i>
               </button>
             </div>
-            
+
             <div className="flex flex-col lg:flex-row flex-1 overflow-hidden">
               {/* Left Column: Form Info */}
               <div className="lg:w-1/3 p-5 border-b lg:border-b-0 lg:border-r border-[#2b3561] overflow-y-auto bg-[#0f111a]">
                 <form onSubmit={handleSaveCollection} className="flex flex-col gap-4">
                   <div className="flex flex-col gap-1">
                     <label className="text-sm font-medium text-gray-300">Tên Collection *</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
                       required
@@ -285,7 +288,7 @@ const CollectionManagement = () => {
                   </div>
                   <div className="flex flex-col gap-1">
                     <label className="text-sm font-medium text-gray-300">Mô tả ngắn</label>
-                    <textarea 
+                    <textarea
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
                       rows={2}
@@ -309,8 +312,8 @@ const CollectionManagement = () => {
                   </div>
                   <div className="flex flex-col gap-1">
                     <label className="text-sm font-medium text-gray-300">Thứ tự hiển thị (Homepage)</label>
-                    <input 
-                      type="number" 
+                    <input
+                      type="number"
                       value={displayOrder}
                       onChange={(e) => setDisplayOrder(parseInt(e.target.value) || 0)}
                       className="bg-[#1b1d29] border border-[#2b3561] text-white rounded-lg py-2 px-3 focus:outline-none focus:border-mainblue transition-all"
@@ -318,14 +321,14 @@ const CollectionManagement = () => {
                   </div>
                   <div className="flex flex-col gap-1">
                     <label className="text-sm font-medium text-gray-300">Banner / Thumbnail URL</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       value={thumbnailUrl}
                       onChange={(e) => setThumbnailUrl(e.target.value)}
                       className="bg-[#1b1d29] border border-[#2b3561] text-white rounded-lg py-2 px-3 focus:outline-none focus:border-mainblue transition-all"
                     />
                   </div>
-                  <button 
+                  <button
                     type="submit"
                     className="w-full bg-mainblue hover:bg-blue-600 text-white font-semibold rounded-lg py-2.5 mt-2 transition-all shadow-lg shadow-blue-500/25"
                   >
@@ -352,9 +355,9 @@ const CollectionManagement = () => {
                     <label className="text-sm font-medium text-gray-300">Thêm phim (Tìm kiếm trong kho)</label>
                     <div className="relative">
                       <i className="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                      <input 
-                        type="text" 
-                        placeholder="Tìm phim theo tên..." 
+                      <input
+                        type="text"
+                        placeholder="Tìm phim theo tên..."
                         value={localSearchQuery}
                         onChange={(e) => setLocalSearchQuery(e.target.value)}
                         className="w-full bg-[#0f111a] border border-[#2b3561] text-white text-sm rounded-lg py-2 pl-9 pr-3 focus:outline-none focus:border-mainblue transition-all"
@@ -372,25 +375,24 @@ const CollectionManagement = () => {
                             {localSearchResults.map(movie => {
                               const alreadyAdded = collectionMovies.some(m => m.id === movie.id);
                               return (
-                                <div 
-                                  key={movie.id} 
+                                <div
+                                  key={movie.id}
                                   className="flex items-center gap-3 p-2 hover:bg-[#3b4781] transition-colors border-b border-gray-700/50 last:border-0"
                                 >
-                                  <img 
-                                    src={movie.posterUrl || `https://image.tmdb.org/t/p/w92${movie.posterPath}`} 
+                                  <img
+                                    src={movie.posterUrl || `https://image.tmdb.org/t/p/w92${movie.posterPath}`}
                                     className="w-8 h-12 object-cover rounded bg-gray-800"
                                     alt=""
                                   />
                                   <div className="flex-1">
                                     <div className="text-sm text-white font-medium line-clamp-1">{movie.title}</div>
-                                    <div className="text-xs text-gray-400">{movie.releaseDate?.substring(0,4)}</div>
+                                    <div className="text-xs text-gray-400">{movie.releaseDate?.substring(0, 4)}</div>
                                   </div>
                                   <button
                                     disabled={alreadyAdded}
                                     onClick={() => handleAddMovieToCollection(movie)}
-                                    className={`px-3 py-1 text-xs font-semibold rounded ${
-                                      alreadyAdded ? "bg-gray-600 text-gray-400" : "bg-mainblue hover:bg-blue-600 text-white"
-                                    }`}
+                                    className={`px-3 py-1 text-xs font-semibold rounded ${alreadyAdded ? "bg-gray-600 text-gray-400" : "bg-mainblue hover:bg-blue-600 text-white"
+                                      }`}
                                   >
                                     {alreadyAdded ? "Đã thêm" : "Thêm"}
                                   </button>
@@ -409,7 +411,7 @@ const CollectionManagement = () => {
                   <h3 className="text-sm font-medium text-gray-300 mb-3">
                     Danh sách phim ({collectionMovies.length}) <span className="text-xs text-gray-500 font-normal ml-2">Kéo thả để sắp xếp</span>
                   </h3>
-                  
+
                   <DragDropContext onDragEnd={handleOnDragEnd}>
                     <Droppable droppableId="movies">
                       {(provided) => (
@@ -420,9 +422,8 @@ const CollectionManagement = () => {
                                 <div
                                   ref={provided.innerRef}
                                   {...provided.draggableProps}
-                                  className={`flex items-center gap-4 bg-[#0f111a] border border-[#2b3561] p-3 rounded-xl ${
-                                    snapshot.isDragging ? "shadow-lg shadow-mainblue/20 border-mainblue" : ""
-                                  }`}
+                                  className={`flex items-center gap-4 bg-[#0f111a] border border-[#2b3561] p-3 rounded-xl ${snapshot.isDragging ? "shadow-lg shadow-mainblue/20 border-mainblue" : ""
+                                    }`}
                                 >
                                   <div {...provided.dragHandleProps} className="text-gray-500 cursor-grab hover:text-white px-2">
                                     <i className="fa-solid fa-grip-vertical"></i>
@@ -430,14 +431,14 @@ const CollectionManagement = () => {
                                   <div className="w-6 text-center font-bold text-gray-500 text-sm">
                                     {index + 1}
                                   </div>
-                                  <img 
-                                    src={movie.posterUrl || `https://image.tmdb.org/t/p/w92${movie.posterPath}`} 
+                                  <img
+                                    src={movie.posterUrl || `https://image.tmdb.org/t/p/w92${movie.posterPath}`}
                                     className="w-10 h-14 object-cover rounded bg-gray-800"
                                     alt=""
                                   />
                                   <div className="flex-1">
                                     <h4 className="text-sm font-bold text-white">{movie.title}</h4>
-                                    <p className="text-xs text-gray-400 mt-0.5">{movie.releaseDate?.substring(0,4)} • {movie.genres?.join(", ") || movie.genreNames}</p>
+                                    <p className="text-xs text-gray-400 mt-0.5">{movie.releaseDate?.substring(0, 4)} • {movie.genres?.join(", ") || movie.genreNames}</p>
                                   </div>
                                   <button
                                     onClick={() => handleRemoveMovieFromCollection(movie.id)}
